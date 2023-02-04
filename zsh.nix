@@ -7,9 +7,9 @@
       D = "cd ~/Downloads && l";
       c = "cd ~/Code && l";
       cf = "cd ~/.config && l";
-      cfa = EDITOR + "~/.config/alacritty/alacritty.yml";
-      cfn = EDITOR + "~/.config/nixpkgs/home.nix";
-      cfs = "sudo" + EDITOR + "/etc/nixos/configuration.nix";
+      cfa = "vim ~/.config/alacritty/alacritty.yml";
+      cfn = "vim ~/.config/nixpkgs/home.nix";
+      cfs = "sudo vim /etc/nixos/configuration.nix";
       cp = "cp -iv";
       d = "cd ~/Documents && l";
       mm = "pactl set-source-mute @DEFAULT_SOURCE@ toggle"; # Mute mic
