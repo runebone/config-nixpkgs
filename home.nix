@@ -1,12 +1,13 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 with {
-  # NOTE: spaces are important
-  # TODO: get rid of them later
-  EDITOR = " vim ";
-  BROWSER = " firefox ";
-  TERM = " alacritty ";
+  join = list: lib.concatStringsSep " " list;
+
+  EDITOR = "vim";
+  BROWSER = "firefox";
+  TERM = "alacritty";
 };
+
 {
   imports = [
     ./polybar.nix
@@ -95,10 +96,10 @@ with {
     keybindings = {
       "super + Return" = TERM;
       "super + m" = "pactl set-source-mute @DEFAULT_SOURCE@ toggle"; # Mute mic
-      "super + r" = TERM + "-e htop";
+      "super + r" = join [ TERM "-e htop" ];
       "super + shift + m" = "pamixer -t"; # Toggle mute audio
-      "super + shift + r" = TERM + "-e lf"; # r for ranger
-      "super + shift + w" = TERM + "-e nmtui"; # Network Manager GUI
+      "super + shift + r" = join [ TERM "-e lf" ]; # r for ranger
+      "super + shift + w" = join [ TERM "-e nmtui" ]; # Network Manager GUI
       "super + shift + {1-8}" = "bspc node -d '^{1-8}'";
       "super + shift + {Down,Up}" = "brightnessctl set {5-,+5}";
       "super + shift + {h,j,k,l}" = "bspc node -s {west,south,north,east}";
@@ -108,7 +109,6 @@ with {
       "super + {h,j,k,l}" = "bspc node -f {west,south,north,east}";
       "super + {minus,equal}" = "pamixer -{d,i} 5";
       "super + {q,+ shift + q}" = "bspc node -{c,k}"; # Close/Kill node
-      # "super + shift + s" = "killall screenkey || screenkey &"; # Show keys
       "super + d" = "rofi -show drun";
     };
   };
