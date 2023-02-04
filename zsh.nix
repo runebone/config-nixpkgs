@@ -3,6 +3,11 @@
   programs.zsh = {
     enable = true;
 
+    history = {
+      size = 100000;
+      save = 100000;
+    };
+
     initExtra = ''
       # Luke Smith's .zshrc
 
@@ -59,13 +64,14 @@
       c = "cd ~/Code && l";
       cf = "cd ~/.config && l";
       cfa = "vim ~/.config/alacritty/alacritty.yml";
-      cfn = "cd ~/.config/nixpkgs && l";
       cfh = "vim ~/.config/nixpkgs/home.nix";
-      cfz = "vim ~/.config/nixpkgs/zsh.nix";
+      cfn = "cd ~/.config/nixpkgs && l";
       cfp = "vim ~/.config/nixpkgs/polybar.nix";
       cfs = "sudo vim /etc/nixos/configuration.nix";
+      cfz = "vim ~/.config/nixpkgs/zsh.nix";
       cp = "cp -iv";
       d = "cd ~/Documents && l";
+      ls = "ls --color --group-directories-first";
       mm = "pactl set-source-mute @DEFAULT_SOURCE@ toggle"; # Mute mic
       mv = "mv -iv";
       nrs = "sudo nixos-rebuild switch";
