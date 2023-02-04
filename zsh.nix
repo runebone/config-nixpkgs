@@ -8,7 +8,10 @@
       c = "cd ~/Code && l";
       cf = "cd ~/.config && l";
       cfa = "vim ~/.config/alacritty/alacritty.yml";
-      cfn = "vim ~/.config/nixpkgs/home.nix";
+      cfn = "cd ~/.config/nixpkgs && l";
+      cfh = "vim ~/.config/nixpkgs/home.nix";
+      cfz = "vim ~/.config/nixpkgs/zsh.nix";
+      cfp = "vim ~/.config/nixpkgs/polybar.nix";
       cfs = "sudo vim /etc/nixos/configuration.nix";
       cp = "cp -iv";
       d = "cd ~/Documents && l";
