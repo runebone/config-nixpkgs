@@ -26,6 +26,7 @@ with {
     brightnessctl
     cmake
     firefox
+    fzf
     gcc
     git
     gnumake
@@ -40,8 +41,8 @@ with {
     picom # Ricing
     polybar
     qtcreator # Qt's vim is actually faster than VSCode's
+    ripgrep # Blazingly fast recursive grep
     screenkey # Show pressed keys on screen
-    silver-searcher # Blazingly fast, multi-CPU-core, ack-like searcher
     sxiv # View pictures
     tdesktop # Telegram
     texlive.combined.scheme-medium # Latex
