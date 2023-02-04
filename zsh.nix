@@ -71,6 +71,7 @@
       cfz = "vim ~/.config/nixpkgs/zsh.nix";
       cp = "cp -iv";
       d = "cd ~/Documents && l";
+      hm = "home-manager";
       ls = "ls --color --group-directories-first";
       mm = "pactl set-source-mute @DEFAULT_SOURCE@ toggle"; # Mute mic
       mv = "mv -iv";
