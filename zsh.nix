@@ -91,11 +91,11 @@
         }
     ];
 
-    oh-my-zsh = {
-      enable = true;
+    # oh-my-zsh = {
+    #   enable = true;
 
-      plugins = [ "git" "man" "ag" "vi-mode" ];
-      theme = "half-life"; # Gordon Freeman saved my life
-    };
+    #   plugins = [ "git" "man" "ag" "vi-mode" ];
+    #   theme = "half-life"; # Gordon Freeman saved my life
+    # };
   };
 }
