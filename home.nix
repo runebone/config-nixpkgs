@@ -25,7 +25,6 @@ with {
     alacritty
     brightnessctl
     cmake
-    copyq # Copy screenshots made by "maim" to clipboard
     firefox
     gcc
     git
@@ -110,6 +109,8 @@ with {
       "super + {minus,equal}" = "pamixer -{d,i} 5";
       "super + {q,+ shift + q}" = "bspc node -{c,k}"; # Close/Kill node
       "super + d" = "rofi -show drun";
+      "Print" = "_PATH_=\"\$HOME/Pictures/Screenshots/pic-full-\"\$(date '+%y%m%d-%H%M-%S').png\"\" && maim \"$_PATH_\" && xclip -selection clipboard -t image/png \"$_PATH_\"";
+      "super + Print" = "_PATH_=\"\$HOME/Pictures/Screenshots/pic-sel-\"\$(date '+%y%m%d-%H%M-%S').png\"\" && maim -s \"$_PATH_\" && xclip -selection clipboard -t image/png \"$_PATH_\"";
     };
   };
 
