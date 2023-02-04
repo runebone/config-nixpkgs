@@ -1,18 +1,27 @@
 { config, pkgs, ... }:
+
+with {
+  colors = {
+    background = "#282A2E";
+    background-alt = "#373B41";
+    foreground = "#C5C8C6";
+    primary = "#2C78BF";
+    secondary = "#0AAEB3"; # "#68A8E4";
+    alert = "#EF2F27";
+    disabled = "#707880";
+
+    black = "#000000";
+    green = "#98BC37";
+    magenta = "#E02C6D";
+  };
+};
+
 {
   services.polybar = {
     enable = true;
 
     config = {
-      "colors" = {
-        background = "#282A2E";
-        background-alt = "#373B41";
-        foreground = "#C5C8C6";
-        primary = "#2C78BF";
-        secondary = "#68A8E4";
-        alert = "#EF2F27";
-        disabled = "#707880";
-      };
+      "colors" = colors;
 
       "bar/main" = {
         width = "100%";
@@ -50,8 +59,11 @@
         type = "internal/xworkspaces";
 
         label-active = "%name%";
-        label-active-background = "\${colors.background-alt}";
-        label-active-underline = "\${colors.primary}";
+        # label-active-background = "\${colors.background-alt}";
+        # label-active-underline = "\${colors.primary}";
+        label-active-foreground = "\${colors.black}";
+        label-active-background = "\${colors.green}";
+        label-active-underline = "\${colors.magenta}";
         label-active-padding = "1";
 
         label-occupied = "%name%";
@@ -87,13 +99,13 @@
         interval = "5";
         format-connected = "<label-connected>";
         format-disconnected = "<label-disconnected>";
-        label-disconnected = "{F#68A8E4}%ifname%%{F#707880} disconnected";
+        label-disconnected = "{F${colors.secondary}}%ifname%%{F${colors.disabled}} disconnected";
       };
 
       "module/wlan" = {
         "inherit" = "network-base";
         interface-type = "wireless";
-        label-connected = "%{F#68A8E4}%ifname%%{F-} %essid%";
+        label-connected = "%{F${colors.secondary}}%ifname%%{F-} %essid%";
       };
 
       "module/memory" = {
