@@ -59,11 +59,8 @@ with {
         type = "internal/xworkspaces";
 
         label-active = "%name%";
-        # label-active-background = "\${colors.background-alt}";
-        # label-active-underline = "\${colors.primary}";
-        label-active-foreground = "\${colors.black}";
-        label-active-background = "\${colors.green}";
-        label-active-underline = "\${colors.magenta}";
+        label-active-background = "\${colors.background-alt}";
+        label-active-underline = "\${colors.alert}";
         label-active-padding = "1";
 
         label-occupied = "%name%";
@@ -88,7 +85,7 @@ with {
         interval = "1";
 
         date = "%d %A %H:%M";
-        date-alt = "%Y-%m-%d %H:%M:%S";
+        date-alt = "%d %B %Y %H:%M:%S";
 
         label = "%date%";
         label-foreground = "\${colors.foreground}";
@@ -99,20 +96,20 @@ with {
         interval = "5";
         format-connected = "<label-connected>";
         format-disconnected = "<label-disconnected>";
-        label-disconnected = "{F${colors.secondary}}%ifname%%{F${colors.disabled}} disconnected";
+        label-disconnected = "{F${colors.disabled}}%ifname%%{F${colors.disabled}} disconnected";
       };
 
       "module/wlan" = {
         "inherit" = "network-base";
         interface-type = "wireless";
-        label-connected = "%{F${colors.secondary}}%ifname%%{F-} %essid%";
+        label-connected = "%{F${colors.disabled}}%ifname%%{F-} %essid%";
       };
 
       "module/memory" = {
         type = "internal/memory";
         interval = "2";
         format-prefix = "RAM ";
-        format-prefix-foreground = "\${colors.secondary}";
+        format-prefix-foreground = "\${colors.disabled}";
         label = "%percentage_used:2%%";
       };
 
@@ -120,7 +117,7 @@ with {
         type = "internal/cpu";
         interval = "2";
         format-prefix = "CPU ";
-        format-prefix-foreground = "\${colors.secondary}";
+        format-prefix-foreground = "\${colors.disabled}";
         label = "%percentage:2%%";
       };
 
@@ -133,7 +130,7 @@ with {
         exec = "~/.config/nixpkgs/custompulse.sh";
 
         format-prefix = "VOL ";
-        format-prefix-foreground = "\${colors.secondary}";
+        format-prefix-foreground = "\${colors.disabled}";
 
         click-left = "${pkgs.pamixer}/bin/pamixer -t";
       };
