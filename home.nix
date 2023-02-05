@@ -65,7 +65,7 @@ with {
 
       settings = {
         border_width = 0;
-        window_gap = 12;
+        window_gap = 4;
 
         focus_follows_pointer = true;
         pointer_follows_focus = true;
