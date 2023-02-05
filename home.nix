@@ -3,21 +3,27 @@
 with {
   join = list: lib.concatStringsSep " " list;
 
-  EDITOR = "vim";
+  EDITOR = "nvim";
   BROWSER = "firefox";
   TERM = "alacritty";
 };
 
 {
   imports = [
+    ./neovim.nix
     ./polybar.nix
-    ./zsh.nix
     ./zathura.nix
+    ./zsh.nix
   ];
 
   home = {
     username = "human";
     homeDirectory = "/home/human";
+    sessionVariables = {
+      EDITOR = EDITOR;
+      BROWSER = BROWSER;
+      TERMINAL = TERM;
+    };
     stateVersion = "22.11";
   };
 
@@ -30,6 +36,7 @@ with {
     gcc
     git
     gnumake
+    go
     htop
     killall
     lf # CLI file manager
@@ -42,6 +49,7 @@ with {
     polybar
     qtcreator # Qt's vim is actually faster than VSCode's
     ripgrep # Blazingly fast recursive grep
+    rustc # Rust compiler
     screenkey # Show pressed keys on screen
     sxiv # View pictures
     tdesktop # Telegram
