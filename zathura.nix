@@ -5,7 +5,6 @@
 
     # Standard mappings are kind of retarded
     extraConfig = ''
-      set sandbox none;
       set statusbar-h-padding 0
       set statusbar-v-padding 0
       set page-padding 1
