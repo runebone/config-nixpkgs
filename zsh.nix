@@ -62,11 +62,12 @@
     shellAliases = {
       D = "cd ~/Downloads && l";
       c = "cd ~/Code && l";
-      cdn = "cd ~/.config/nixpkgs && l";
+      cdcd = "cd ~/.config/nixpkgs && l";
+      cdn = "cd ~/.config/nixpkgs/neovim && l";
       cf = "cd ~/.config && l";
       cfa = "vim ~/.config/alacritty/alacritty.yml";
       cfh = "vim ~/.config/nixpkgs/home.nix";
-      cfn = "vim ~/.config/nixpkgs/neovim.nix";
+      cfn = "vim ~/.config/nixpkgs/neovim/neovim.nix";
       cfp = "vim ~/.config/nixpkgs/polybar.nix";
       cfs = "sudo vim /etc/nixos/configuration.nix";
       cfz = "vim ~/.config/nixpkgs/zsh.nix";
