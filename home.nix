@@ -3,14 +3,14 @@
 with {
   join = list: lib.concatStringsSep " " list;
 
-  EDITOR = "nvim";
+  EDITOR = "vim";
   BROWSER = "firefox";
   TERM = "alacritty";
 };
 
 {
   imports = [
-    ./neovim.nix
+    ./neovim/neovim.nix
     ./polybar.nix
     ./zathura.nix
     ./zsh.nix
@@ -30,6 +30,7 @@ with {
   home.packages = with pkgs; [
     alacritty
     brightnessctl
+    clang-tools # C/C++ language server
     cmake
     firefox
     fzf
@@ -37,6 +38,7 @@ with {
     git
     gnumake
     go
+    gopls # Go language server
     htop
     killall
     lf # CLI file manager
@@ -47,8 +49,10 @@ with {
     pamixer # PulseAudio mixer
     picom # Ricing
     polybar
+    pyright # Python language server
     qtcreator # Qt's vim is actually faster than VSCode's
     ripgrep # Blazingly fast recursive grep
+    rust-analyzer # Rust language server
     rustc # Rust compiler
     screenkey # Show pressed keys on screen
     sxiv # View pictures
