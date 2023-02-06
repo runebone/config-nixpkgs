@@ -8,6 +8,20 @@ with {
   TERM = "alacritty";
 };
 
+# TODO: make this file cleaner
+let
+  my-python-packages = ps: with ps; [
+    beautifulsoup4
+    matplotlib
+    numpy
+    pandas
+    pip
+    poetry # Virtual environments, dependencies management
+    requests
+    scipy
+    sympy
+  ];
+in
 {
   imports = [
     ./neovim/neovim.nix
@@ -28,6 +42,7 @@ with {
   };
 
   home.packages = with pkgs; [
+    (python3.withPackages my-python-packages)
     alacritty
     brightnessctl
     clang-tools # C/C++ language server
