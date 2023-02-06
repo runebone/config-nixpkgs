@@ -61,6 +61,7 @@
 
     shellAliases = {
       D = "cd ~/Downloads && l";
+      b = "cd ~/Books && l";
       c = "cd ~/Code && l";
       cdcd = "cd ~/.config/nixpkgs && l";
       cdn = "cd ~/.config/nixpkgs/neovim && l";
