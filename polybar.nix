@@ -127,7 +127,7 @@ with {
         type = "custom/script";
         interval = "2";
         # tail = "true"; # eats so much
-        exec = "~/.config/nixpkgs/custompulse.sh";
+        exec = "~/.config/nixpkgs/scripts/custompulse.sh";
 
         format-prefix = "VOL ";
         format-prefix-foreground = "\${colors.disabled}";
