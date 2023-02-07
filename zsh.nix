@@ -75,7 +75,8 @@
       cp = "cp -iv";
       d = "cd ~/Documents && l";
       hm = "home-manager";
-      ls = "ls --color --group-directories-first";
+      ls = "ls -h --color=auto --group-directories-first";
+      mkdir = "mkdir -pv";
       mm = "pactl set-source-mute @DEFAULT_SOURCE@ toggle"; # Mute mic
       mv = "mv -iv";
       nrs = "sudo nixos-rebuild switch";
