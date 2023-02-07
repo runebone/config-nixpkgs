@@ -83,9 +83,11 @@
       p = "cd ~/Pictures && l";
       rm = "rm -vI";
       sc = "cd ~/Pictures/Screenshots && l";
-      tg = "telegram-desktop";
+      sxiv = "devour sxiv"; # Swallow terminal
+      tg = "devour telegram-desktop";
       u = "cd ~/University && l";
-      z = "zathura";
+      z = "devour zathura"; # Swallow terminal
+      zathura = "devour zathura"; # Swallow terminal
     };
 
     plugins = [

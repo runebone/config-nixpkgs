@@ -47,6 +47,7 @@ in
     brightnessctl
     clang-tools # C/C++ language server
     cmake
+    devour # Window swallowing; hides your current window when launching an external program
     firefox
     fzf
     gcc
