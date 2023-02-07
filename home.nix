@@ -68,6 +68,7 @@ in
     pyright # Python language server
     qtcreator # Qt's vim is actually faster than VSCode's
     ripgrep # Blazingly fast recursive grep
+    rnix-lsp # Nix language server
     rust-analyzer # Rust language server
     rustc # Rust compiler
     screenkey # Show pressed keys on screen
