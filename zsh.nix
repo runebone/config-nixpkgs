@@ -88,6 +88,16 @@
       u = "cd ~/University && l";
       z = "devour zathura"; # Swallow terminal
       zathura = "devour zathura"; # Swallow terminal
+      asm = "cd ~/University/asm && l";
+      ca = "cd ~/University/compalg && l";
+      ac = "cd ~/University/archcomp && l";
+      cg = "cd ~/University/cg && l";
+      oop = "cd ~/University/oop && l";
+      v = "devour neovide --nofork --multigrid";
+      psci = "cd ~/University/polsci && l";
+      ssci = "cd ~/University/socsci && l";
+      lta = "cd ~/University/lta && l";
+      de = "cd ~/University/deutsche && l";
     };
 
     plugins = [
