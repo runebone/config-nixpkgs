@@ -3,7 +3,6 @@ vim.cmd [[
   set encoding=utf-8
   set nohlsearch
   set clipboard+=unnamedplus
-  set bg=dark
 
   set tabstop=4
   set shiftwidth=4
@@ -12,7 +11,10 @@ vim.cmd [[
   set autochdir
 
   set t_Co=256
+  set bg=dark
   colorscheme srcery
+
+  set guifont=Mononoki:h12
 
   set number relativenumber
   set cul
