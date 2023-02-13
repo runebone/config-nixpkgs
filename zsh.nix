@@ -98,6 +98,7 @@
       ssci = "cd ~/University/socsci && l";
       lta = "cd ~/University/lta && l";
       de = "cd ~/University/deutsche && l";
+      translit = "python ~/.config/nixpkgs/scripts/translit.py";
     };
 
     plugins = [
