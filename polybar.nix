@@ -47,7 +47,7 @@ with {
 
         modules-left = "xworkspaces xwindow";
         modules-center = "date";
-        modules-right = "memory cpu custompulse wlan battery xkeyboard";
+        modules-right = "filesystem memory cpu custompulse wlan battery xkeyboard";
 
         cursor-click = "pointer";
         cursor-scroll = "ns-resize";
@@ -103,6 +103,18 @@ with {
         "inherit" = "network-base";
         interface-type = "wireless";
         label-connected = "%{F${colors.disabled}}%ifname%%{F-} %essid%";
+      };
+
+      "module/filesystem" = {
+        type = "internal/fs";
+        interval = "25";
+
+        mount-0 = "/";
+
+        label-mounted = "%{F${colors.disabled}}%mountpoint%%{F-} %percentage_used%%";
+
+        label-unmounted = "%mountpoint% not mounted";
+        label-unmounted-foreground = "${colors.disabled}";
       };
 
       "module/memory" = {
