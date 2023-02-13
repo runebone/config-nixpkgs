@@ -51,6 +51,7 @@ in
     firefox
     fzf
     gcc
+    gdb # GNU debugger
     git
     gnumake
     go
@@ -58,24 +59,28 @@ in
     htop
     killall
     lf # CLI file manager
+    libreoffice-qt # Open docx
     maim # "make image"; for screenshots
     mpv # Open video-files
     neofetch # Of course
+    neovide # Neovim GUI
     obs-studio
     pamixer # PulseAudio mixer
     picom # Ricing
     polybar
     pyright # Python language server
+    qt6.full
     qtcreator # Qt's vim is actually faster than VSCode's
     ripgrep # Blazingly fast recursive grep
     rnix-lsp # Nix language server
     rust-analyzer # Rust language server
-    rustc # Rust compiler
+    rustup # Rust compiler + cargo + rustup
     screenkey # Show pressed keys on screen
     sxiv # View pictures
     tdesktop # Telegram
     texlive.combined.scheme-medium # Latex
     tmux
+    unzip
     xorg.xev # Check keys' names
     xwallpaper # Set wallpapers
     zathura # GOAT PDF viewer
@@ -141,6 +146,8 @@ in
       "super + d" = "rofi -show drun";
       "Print" = "_PATH_=\"\$HOME/Pictures/Screenshots/pic-full-\"\$(date '+%y%m%d-%H%M-%S').png\"\" && maim \"$_PATH_\" && xclip -selection clipboard -t image/png \"$_PATH_\"";
       "super + Print" = "_PATH_=\"\$HOME/Pictures/Screenshots/pic-sel-\"\$(date '+%y%m%d-%H%M-%S').png\"\" && maim -s \"$_PATH_\" && xclip -selection clipboard -t image/png \"$_PATH_\"";
+      "super + shift + s" = "systemctl suspend";
+      "super + shift + h" = "systemctl hibernate";
     };
   };
 
