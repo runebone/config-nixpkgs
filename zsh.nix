@@ -88,6 +88,8 @@
       u = "cd ~/University && l";
       z = "devour zathura"; # Swallow terminal
       zathura = "devour zathura"; # Swallow terminal
+      qtcreator = "devour qtcreator"; # Swallow terminal
+      blender = "devour blender"; # Swallow terminal
       asm = "cd ~/University/asm && l";
       ca = "cd ~/University/compalg && l";
       ac = "cd ~/University/archcomp && l";
@@ -99,6 +101,7 @@
       lta = "cd ~/University/lta && l";
       de = "cd ~/University/deutsche && l";
       translit = "python ~/.config/nixpkgs/scripts/translit.py";
+      dn = "vim ~/Notes/$(date +'%Y-%m-%d').md";
     };
 
     plugins = [
