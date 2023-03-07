@@ -44,6 +44,8 @@ in
   home.packages = with pkgs; [
     (python3.withPackages my-python-packages)
     alacritty
+    anki
+    blender
     brightnessctl
     clang-tools # C/C++ language server
     cmake
@@ -56,9 +58,11 @@ in
     gnumake
     go
     gopls # Go language server
+    helix
     htop
     killall
     lf # CLI file manager
+    libGL # OpenGL stuff
     libreoffice-qt # Open docx
     maim # "make image"; for screenshots
     mpv # Open video-files
@@ -79,8 +83,12 @@ in
     sxiv # View pictures
     tdesktop # Telegram
     texlive.combined.scheme-medium # Latex
-    tmux
+    translate-shell
+    transmission
     unzip
+    xorg.libX11 # OpenGL stuff
+    xorg.libXi
+    xorg.libXrandr
     xorg.xev # Check keys' names
     xwallpaper # Set wallpapers
     zathura # GOAT PDF viewer
@@ -147,7 +155,7 @@ in
       "Print" = "_PATH_=\"\$HOME/Pictures/Screenshots/pic-full-\"\$(date '+%y%m%d-%H%M-%S').png\"\" && maim \"$_PATH_\" && xclip -selection clipboard -t image/png \"$_PATH_\"";
       "super + Print" = "_PATH_=\"\$HOME/Pictures/Screenshots/pic-sel-\"\$(date '+%y%m%d-%H%M-%S').png\"\" && maim -s \"$_PATH_\" && xclip -selection clipboard -t image/png \"$_PATH_\"";
       "super + shift + s" = "systemctl suspend";
-      "super + shift + h" = "systemctl hibernate";
+      "super + End" = "systemctl hibernate";
     };
   };
 
