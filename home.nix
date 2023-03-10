@@ -42,6 +42,7 @@ in
   };
 
   home.packages = with pkgs; [
+    ocrmypdf
     (python3.withPackages my-python-packages)
     alacritty
     anki
@@ -54,6 +55,7 @@ in
     fzf
     gcc
     gdb # GNU debugger
+    gimp
     git
     gnumake
     go
@@ -128,7 +130,7 @@ in
     # will be printed
     initExtra = ''
       xset r rate 300 50
-      xwallpaper --zoom ~/.background-image
+      xwallpaper --zoom $(ls ~/Pictures/*.jpg | shuf -n 1)
     '';
   };
 
