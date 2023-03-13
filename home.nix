@@ -42,7 +42,6 @@ in
   };
 
   home.packages = with pkgs; [
-    ocrmypdf
     (python3.withPackages my-python-packages)
     alacritty
     anki
@@ -71,6 +70,7 @@ in
     neofetch # Of course
     neovide # Neovim GUI
     obs-studio
+    ocrmypdf
     pamixer # PulseAudio mixer
     picom # Ricing
     polybar
