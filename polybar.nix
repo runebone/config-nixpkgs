@@ -26,13 +26,13 @@ with {
       "bar/main" = {
         width = "100%";
         height = "24pt";
-        radius = "6";
+        radius = "0";
 
         background = "\${colors.background}";
         foreground = "\${colors.foreground}";
 
         line-size = "3pt";
-        border-size = "4pt";
+        border-size = "0pt";
         border-color = "#00000000";
 
         padding-left = "0";
