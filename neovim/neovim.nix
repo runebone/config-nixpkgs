@@ -28,6 +28,9 @@ with {
 
       indentLine
 
+      # Git
+      vim-fugitive
+
       # NerdTree-like plugin
       {
         plugin = nvim-tree-lua;
