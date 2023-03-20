@@ -109,7 +109,7 @@ in
 
       settings = {
         border_width = 0;
-        window_gap = 4;
+        window_gap = 0;
 
         focus_follows_pointer = true;
         pointer_follows_focus = true;
