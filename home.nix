@@ -91,6 +91,7 @@ in
     xorg.libX11 # OpenGL stuff
     xorg.libXi
     xorg.libXrandr
+    xorg.xmodmap
     xorg.xev # Check keys' names
     xwallpaper # Set wallpapers
     zathura # GOAT PDF viewer
