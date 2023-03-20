@@ -42,6 +42,8 @@ in
   };
 
   home.packages = with pkgs; [
+    dosbox
+    julia
     (python3.withPackages my-python-packages)
     alacritty
     anki
