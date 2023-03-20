@@ -183,5 +183,23 @@ in
     userEmail = "runebone1@gmail.com";
   };
 
+  programs.lf = {
+    enable = true;
+
+    extraConfig = ''
+    # define a custom "delete" command
+    # $fx - selected with "space" files (marked pink)
+    cmd delete ''${{
+    set -f
+    printf "$fx\n"
+    printf "delete?[y/n]"
+    read ans
+    [ $ans = "y" ] && rm -rf $fx
+    }}
+
+    map D delete
+    '';
+  };
+
   programs.home-manager.enable = true;
 }
