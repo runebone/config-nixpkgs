@@ -24,6 +24,7 @@ with {
       # Other plugins
       vim-go
       vim-glsl
+      julia-vim
 
       indentLine
 
@@ -144,6 +145,7 @@ with {
         require('lspconfig').pyright.setup(config)
         require('lspconfig').rust_analyzer.setup(config)
         require('lspconfig').rnix.setup(config)
+        require('lspconfig').julials.setup(config)
         '';
       }
 
