@@ -106,6 +106,8 @@
       dn = "vim ~/Notes/$(date +'%Y-%m-%d').md";
       sdn = "shutdown now";
       setrbg = "sh ~/.config/nixpkgs/scripts/set_random_background.sh";
+      sbg = "xwallpaper --zoom";
+      wp = "cd ~/Pictures/Wallpapers && l";
     };
 
     plugins = [
