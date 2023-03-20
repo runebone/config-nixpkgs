@@ -130,7 +130,6 @@ in
     # will be printed
     initExtra = ''
       xset r rate 300 50
-      xwallpaper --zoom $(ls ~/Pictures/*.jpg | shuf -n 1)
     '';
   };
 
