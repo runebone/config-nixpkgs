@@ -4,18 +4,21 @@ with {
   join = list: lib.concatStringsSep " " list;
 
   EDITOR = "vim";
-  BROWSER = "firefox";
+  BROWSER = "brave";
   TERM = "alacritty";
 };
 
 # TODO: make this file cleaner
 let
   my-python-packages = ps: with ps; [
+    jupyter
+    ipython
     beautifulsoup4
     matplotlib
     numpy
     pandas
     pip
+    pyqt6
     poetry # Virtual environments, dependencies management
     requests
     scipy
@@ -42,16 +45,49 @@ in
   };
 
   home.packages = with pkgs; [
-    dosbox
-    julia
+    SDL2
+    SDL2_ttf
+    SDL2_net
+    SDL2_gfx
+    SDL2_sound
+    SDL2_mixer
+    SDL2_image
+    # assimp # Open Asset Import Library (for OpenGL)
+    zip
+    nodejs
+    nodePackages.svelte-language-server
+    nodePackages.typescript
+    nodePackages.typescript-language-server
+    poppler_utils # pdfunite
+    nlohmann_json
+    boost # boost/asio c++ lib
+    qemu
+    slock
+    # vimb
+    parallel # Parallelize shell commands execution
+    edb # ~ IDA Pro; x64dbg
+    gtk3
+    brave
+    tmux
+    streamlit
+    docker
+    docker-compose
+    nasm
+    imagemagick
+    astyle
+    glfw
+    glm
+    pkg-config
     (python3.withPackages my-python-packages)
     alacritty
     anki
     blender
     brightnessctl
     clang-tools # C/C++ language server
+    clisp
     cmake
     devour # Window swallowing; hides your current window when launching an external program
+    dosbox
     firefox
     fzf
     gcc
@@ -63,6 +99,7 @@ in
     gopls # Go language server
     helix
     htop
+    julia
     killall
     lf # CLI file manager
     libGL # OpenGL stuff
@@ -71,9 +108,11 @@ in
     mpv # Open video-files
     neofetch # Of course
     neovide # Neovim GUI
+    nmap
     obs-studio
     ocrmypdf
     pamixer # PulseAudio mixer
+    pandoc
     picom # Ricing
     polybar
     pyright # Python language server
@@ -86,15 +125,19 @@ in
     screenkey # Show pressed keys on screen
     sxiv # View pictures
     tdesktop # Telegram
-    texlive.combined.scheme-medium # Latex
+    texlive.combined.scheme-full # Latex
+    tmux
     translate-shell
     transmission
     unzip
+    # vulkan-loader # Rust GLs
     xorg.libX11 # OpenGL stuff
     xorg.libXi
     xorg.libXrandr
-    xorg.xmodmap
     xorg.xev # Check keys' names
+    xorg.xmodmap
+    xorg.libxcb
+    # xorg.libXinerama
     xwallpaper # Set wallpapers
     zathura # GOAT PDF viewer
     zsh
@@ -115,7 +158,7 @@ in
         window_gap = 0;
 
         focus_follows_pointer = true;
-        pointer_follows_focus = true;
+        # pointer_follows_focus = true;
       };
 
       rules = {
@@ -133,6 +176,7 @@ in
     # will be printed
     initExtra = ''
       xset r rate 300 50
+      xwallpaper --zoom ~/.background-image
     '';
   };
 
@@ -149,7 +193,8 @@ in
       "super + shift + {1-8}" = "bspc node -d '^{1-8}'";
       "super + shift + {Down,Up}" = "brightnessctl set {5-,+5}";
       "super + shift + {h,j,k,l}" = "bspc node -s {west,south,north,east}";
-      "super + w" = "firefox";
+      "super + e" = "firefox";
+      "super + w" = BROWSER;
       "super + {1-8}" = "bspc desktop -f '^{1-8}'";
       "super + {f,t,+ shift + f}" = "bspc node -t {fullscreen,tiled,floating}";
       "super + {h,j,k,l}" = "bspc node -f {west,south,north,east}";
@@ -167,7 +212,9 @@ in
   services.picom = {
     enable = true;
 
-    inactiveOpacity = 0.8;
+    backend = "xrender";
+
+    inactiveOpacity = 0.95;
   };
 
   programs.rofi = {
@@ -183,6 +230,13 @@ in
 
     userName = "Konstantin Runov";
     userEmail = "runebone1@gmail.com";
+  };
+
+  programs.tmux = {
+    enable = true;
+
+    extraConfig = ''
+    '';
   };
 
   programs.lf = {
