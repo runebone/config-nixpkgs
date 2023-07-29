@@ -9,6 +9,9 @@
     };
 
     initExtra = ''
+      export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/nix/var/nix/profiles/per-user/human/profile/lib
+      export PATH=$PATH:/nix/var/nix/profiles/per-user/human/profile/include
+
       # Luke Smith's .zshrc
 
       autoload -U colors && colors
@@ -92,22 +95,26 @@
       blender = "devour blender"; # Swallow terminal
       obs = "devour obs"; # Swallow terminal
       gimp = "devour gimp"; # Swallow terminal
-      asm = "cd ~/University/asm && l";
-      ca = "cd ~/University/compalg && l";
-      ac = "cd ~/University/archcomp && l";
-      cg = "cd ~/University/cg && l";
-      oop = "cd ~/University/oop && l";
+      brave = "devour brave"; # Swallow terminal
+      # asm = "cd ~/University/asm && l";
+      # ca = "cd ~/University/compalg && l";
+      # ac = "cd ~/University/archcomp && l";
+      # cg = "cd ~/University/cg && l";
+      # oop = "cd ~/University/oop && l";
       v = "devour neovide --nofork --multigrid";
-      psci = "cd ~/University/polsci && l";
-      ssci = "cd ~/University/socsci && l";
-      lta = "cd ~/University/lta && l";
-      de = "cd ~/University/deutsche && l";
+      # psci = "cd ~/University/polsci && l";
+      # ssci = "cd ~/University/socsci && l";
+      # lta = "cd ~/University/lta && l";
+      # de = "cd ~/University/deutsche && l";
+      os = "cd ~/University/os && l";
+      pt = "cd ~/University/probtheory && l";
       translit = "python ~/.config/nixpkgs/scripts/translit.py";
       dn = "vim ~/Notes/$(date +'%Y-%m-%d').md";
       sdn = "shutdown now";
       setrbg = "sh ~/.config/nixpkgs/scripts/set_random_background.sh";
       sbg = "xwallpaper --zoom";
       wp = "cd ~/Pictures/Wallpapers && l";
+      ssh = "TERM=xterm-256color ssh";
     };
 
     plugins = [
