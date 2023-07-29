@@ -17,19 +17,33 @@ with {
       vim-nix
       vim-surround
       vim-commentary
+      vim-repeat
       vim-airline
+      vim-airline-themes
       vim-css-color
       srcery-vim
+      papercolor-theme
+      awesome-vim-colorschemes
 
       # Other plugins
       vim-go
       vim-glsl
       julia-vim
+      vim-svelte
+      emmet-vim
 
       indentLine
 
       # Git
       vim-fugitive
+
+      {
+        plugin = rose-pine;
+        type = "lua";
+        config = ''
+          require('rose-pine').setup({ disable_background = true })
+        '';
+      }
 
       # NerdTree-like plugin
       {
@@ -111,6 +125,10 @@ with {
           }
         '';
       }
+      {
+        plugin = nvim-treesitter-context;
+        type = "lua";
+      }
 
       # LSP
       {
@@ -136,6 +154,8 @@ with {
           vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
           vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
           vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, opts)
+
+          vim.keymap.set('n', '<leader>f', vim.lsp.buf.code_action, opts)
         end
 
         local config = {
@@ -149,6 +169,8 @@ with {
         require('lspconfig').rust_analyzer.setup(config)
         require('lspconfig').rnix.setup(config)
         require('lspconfig').julials.setup(config)
+        require('lspconfig').svelte.setup(config)
+        require('lspconfig').tsserver.setup(config)
         '';
       }
 
