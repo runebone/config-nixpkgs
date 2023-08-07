@@ -45,6 +45,9 @@ in
   };
 
   home.packages = with pkgs; [
+    activate-linux
+    # subversion # svn version control
+    # rnote # ~= xournalpp
     SDL2
     SDL2_ttf
     SDL2_net
@@ -64,6 +67,7 @@ in
     qemu
     slock
     # vimb
+    # vimgolf
     parallel # Parallelize shell commands execution
     edb # ~ IDA Pro; x64dbg
     gtk3
@@ -92,6 +96,8 @@ in
     fzf
     gcc
     gdb # GNU debugger
+    # lldb # LLVM debugger
+    renderdoc # Graphics debugger
     gimp
     git
     gnumake
