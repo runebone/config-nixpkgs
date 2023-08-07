@@ -72,7 +72,6 @@ function toggle_dark()
   end
 end
 
-vim.keymap.set("n", "<leader>n", vim.cmd.NvimTreeToggle);
 vim.keymap.set("n", "<leader>s", ":lua toggle_colorscheme()<CR>");
 vim.keymap.set("n", "<leader>d", ":lua disable_background()<CR>");
 vim.keymap.set("n", "<leader>l", ":lua toggle_dark()<CR>");
