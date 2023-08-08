@@ -34,3 +34,11 @@ require('lspconfig').rnix.setup(config)
 require('lspconfig').julials.setup(config)
 require('lspconfig').svelte.setup(config)
 require('lspconfig').tsserver.setup(config)
+
+-- Lua
+require("lsp-colors").setup({
+  Error = "#db4b4b",
+  Warning = "#e0af68",
+  Information = "#0db9d7",
+  Hint = "#10B981"
+})

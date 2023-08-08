@@ -15,6 +15,7 @@ let EXTRA_CONFIG = ''
   luafile ${PLUGIN_DIR}/refactoring.lua
   luafile ${PLUGIN_DIR}/telescope.lua
   luafile ${PLUGIN_DIR}/treesitter.lua
+  luafile ${PLUGIN_DIR}/zenmode.lua
 ''; in
 {
   # Initial configuration is in /etc/nixos/configuration.nix
@@ -93,6 +94,7 @@ let EXTRA_CONFIG = ''
 
       # LSP
       nvim-lspconfig
+      lsp-colors-nvim
 
       # Autocompletion
       nvim-cmp
@@ -109,6 +111,8 @@ let EXTRA_CONFIG = ''
 
       # Refactoring
       refactoring-nvim
+
+      zen-mode-nvim
     ];
 
     extraConfig = EXTRA_CONFIG;
