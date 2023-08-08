@@ -182,6 +182,7 @@ in
     # will be printed
     initExtra = ''
       xset r rate 300 50
+      xrandr --output eDP --set "TearFree" on
       xwallpaper --zoom ~/.background-image
     '';
   };
