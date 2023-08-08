@@ -18,8 +18,9 @@ cmp.setup({
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
-        ['<C-e>'] = cmp.mapping.abort(),
-        ['<C-l>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+        ['<C-c>'] = cmp.mapping.abort(),
+        -- ['<C-l>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+        ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
@@ -74,7 +75,8 @@ cmp.setup({
 
         -- ... Your other mappings ...
 
-        ["<Tab>"] = cmp.mapping(function(fallback)
+        -- ["<Tab>"] = cmp.mapping(function(fallback)
+        ["<C-l>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
                 -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable() 
@@ -88,7 +90,8 @@ cmp.setup({
             end
         end, { "i", "s" }),
 
-        ["<S-Tab>"] = cmp.mapping(function(fallback)
+        -- ["<S-Tab>"] = cmp.mapping(function(fallback)
+        ["<C-h>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
             elseif luasnip.jumpable(-1) then
@@ -103,3 +106,6 @@ cmp.setup({
 
     -- ... Your other configuration ...
 })
+
+require("luasnip.loaders.from_vscode").lazy_load()
+require("luasnip.loaders.from_snipmate").lazy_load({paths = "~/.config/nixpkgs/neovim/snippets"})

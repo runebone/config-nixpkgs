@@ -7,7 +7,7 @@ with {
 
 let EXTRA_CONFIG = ''
   luafile ${LUA_CONFIG}
-  luafile ${PLUGIN_DIR}/cmp.lua
+  luafile ${PLUGIN_DIR}/cmp_luasnip.lua
   luafile ${PLUGIN_DIR}/colors.lua
   luafile ${PLUGIN_DIR}/harpoon.lua
   luafile ${PLUGIN_DIR}/lsp.lua
@@ -22,7 +22,7 @@ let EXTRA_CONFIG = ''
   programs.neovim = {
     enable = true;
 
-    vimAlias = true;
+    vimAlias = false;
 
     plugins = with pkgs.vimPlugins; [
       # Basic quality of life improvements
@@ -108,6 +108,7 @@ let EXTRA_CONFIG = ''
 
       # Snippets
       luasnip # Snippet engine
+      friendly-snippets
 
       # Refactoring
       refactoring-nvim
