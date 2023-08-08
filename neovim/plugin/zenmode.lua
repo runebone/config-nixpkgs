@@ -1,7 +1,12 @@
+local value = 1
+
+if vim.g.neovide then value = 0 end
+
 vim.keymap.set("n", "<leader>zz", function()
     require("zen-mode").setup {
         window = {
-            width = 90,
+            backdrop = value,
+            width = 100,
             options = { }
         },
     }
@@ -15,6 +20,7 @@ end)
 vim.keymap.set("n", "<leader>zZ", function()
     require("zen-mode").setup {
         window = {
+            backdrop = value,
             width = 80,
             options = { }
         },
