@@ -5,7 +5,7 @@ with {
     background = "#282A2E";
     background-alt = "#373B41";
     foreground = "#C5C8C6";
-    primary = "#2C78BF";
+    primary = "#2C78BF"; # "#4285F4"; # "#2C78BF";
     secondary = "#0AAEB3"; # "#68A8E4";
     alert = "#EF2F27";
     disabled = "#707880";
@@ -24,6 +24,8 @@ with {
       "colors" = colors;
 
       "bar/main" = {
+        bottom = "false";
+
         width = "100%";
         height = "24pt";
         radius = "0";
@@ -60,7 +62,7 @@ with {
 
         label-active = "%name%";
         label-active-background = "\${colors.background-alt}";
-        label-active-underline = "\${colors.alert}";
+        label-active-underline = "\${colors.primary}";
         label-active-padding = "1";
 
         label-occupied = "%name%";
