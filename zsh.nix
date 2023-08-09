@@ -102,6 +102,7 @@
       # cg = "cd ~/University/cg && l";
       # oop = "cd ~/University/oop && l";
       v = "devour neovide --nofork --multigrid";
+      vim = "devour neovide --nofork --multigrid";
       # psci = "cd ~/University/polsci && l";
       # ssci = "cd ~/University/socsci && l";
       # lta = "cd ~/University/lta && l";
