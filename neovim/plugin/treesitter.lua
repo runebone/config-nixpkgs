@@ -4,3 +4,5 @@ require'nvim-treesitter.configs'.setup {
         enable = true,
     };
 }
+
+vim.keymap.set("n", "<leader>tt", ":TSToggle highlight<CR>");
