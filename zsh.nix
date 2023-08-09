@@ -69,6 +69,7 @@
       cdcd = "cd ~/.config/nixpkgs && l";
       cdn = "cd ~/.config/nixpkgs/neovim && l";
       cf = "cd ~/.config && l";
+      cfcf = "cd ~/.config/nixpkgs && l";
       cfa = "vim ~/.config/alacritty/alacritty.yml";
       cfh = "vim ~/.config/nixpkgs/home.nix";
       cfn = "vim ~/.config/nixpkgs/neovim/neovim.nix";
