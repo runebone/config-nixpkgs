@@ -30,6 +30,8 @@ let EXTRA_CONFIG = ''
       vim-commentary
       vim-repeat
       indentLine
+      todo-comments-nvim
+      trouble-nvim
 
       vim-airline
       vim-airline-themes
@@ -86,6 +88,7 @@ let EXTRA_CONFIG = ''
             rust
             typescript
             vim
+            comment
           ]
         );
         type = "lua";
