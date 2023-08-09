@@ -96,6 +96,7 @@ in
     fzf
     gcc
     gdb # GNU debugger
+    ddd
     # lldb # LLVM debugger
     renderdoc # Graphics debugger
     gimp
