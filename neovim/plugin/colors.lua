@@ -7,6 +7,8 @@ function ColorMyPencils(color)
 	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
+    -- Highlight comments using treesitter comment parser
+    vim.api.nvim_set_hl(0, "@text.note", { link = "Search" })
 end
 
--- ColorMyPencils()
+ColorMyPencils()
