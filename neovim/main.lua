@@ -50,20 +50,17 @@ end
 
 function toggle_colorscheme()
   if vim.g.colors_name == "gruvbox" then
-    -- vim.cmd("set background=light")
-      set_background_light()
-    vim.cmd("colorscheme PaperColor")
-    vim.cmd("AirlineTheme papercolor")
+    set_background_light()
+    vim.cmd.colorscheme("PaperColor")
+    ColorMyPencils("PaperColor")
   else
-    -- vim.cmd("set background=dark")
-      set_background_dark()
-    vim.cmd("colorscheme gruvbox")
-    vim.cmd("AirlineTheme gruvbox")
-    disable_background()
+    set_background_dark()
+    vim.cmd.colorscheme("gruvbox")
+    ColorMyPencils("gruvbox")
   end
 end
 
-function toggle_dark()
+function toggle_light()
   if vim.g.background_color == "dark" then
       set_background_light()
   else
@@ -72,5 +69,4 @@ function toggle_dark()
 end
 
 vim.keymap.set("n", "<leader>s", ":lua toggle_colorscheme()<CR>");
-vim.keymap.set("n", "<leader>d", ":lua disable_background()<CR>");
-vim.keymap.set("n", "<leader>l", ":lua toggle_dark()<CR>");
+vim.keymap.set("n", "<leader>l", ":lua toggle_light()<CR>");
