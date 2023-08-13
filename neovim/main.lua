@@ -37,6 +37,7 @@ vim.g.gruvbox_material_transparent_background = 2
 vim.g.gruvbox_material_enable_bold = 1
 vim.g.gruvbox_material_enable_italic = 1
 
+local gruvbox = "gruvbox"
 local darkct = "gruvbox-material"
 local lightct = "PaperColor"
 
@@ -75,6 +76,13 @@ function toggle_light()
   end
 end
 
+function set_gruvbox()
+    set_background_dark()
+    vim.cmd.colorscheme(gruvbox)
+    ColorMyPencils(gruvbox)
+end
+
 vim.keymap.set("n", "<leader>s", ":lua toggle_colorscheme()<CR>");
 vim.keymap.set("n", "<leader>l", ":lua toggle_light()<CR>");
 vim.keymap.set("n", "<leader>d", ":lua disable_background()<CR>");
+vim.keymap.set("n", "<leader>g", ":lua set_gruvbox()<CR>");
