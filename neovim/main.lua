@@ -31,6 +31,7 @@ vim.cmd [[
 
 vim.g.mapleader = ' '
 vim.g.background_color = "dark"
+vim.g.airline_theme = "base16" 
 
 function disable_background()
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
