@@ -38,8 +38,6 @@ function disable_background()
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
-disable_background()
-
 function set_background_light()
     vim.cmd("set background=light")
     vim.g.background_color = "light"
