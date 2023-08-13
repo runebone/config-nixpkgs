@@ -13,7 +13,7 @@ vim.cmd [[
   set t_Co=256
   set bg=dark
 
-  colorscheme gruvbox
+  colorscheme gruvbox-material
 
   set guifont=Mononoki:h10
 
@@ -32,6 +32,13 @@ vim.cmd [[
 vim.g.mapleader = ' '
 vim.g.background_color = "dark"
 vim.g.airline_theme = "base16" 
+-- vim.g.gruvbox_material_background = 'soft'
+vim.g.gruvbox_material_transparent_background = 2
+vim.g.gruvbox_material_enable_bold = 1
+vim.g.gruvbox_material_enable_italic = 1
+
+local darkct = "gruvbox-material"
+local lightct = "PaperColor"
 
 function disable_background()
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
@@ -49,14 +56,14 @@ function set_background_dark()
 end
 
 function toggle_colorscheme()
-  if vim.g.colors_name == "gruvbox" then
+  if vim.g.colors_name == darkct then
     set_background_light()
-    vim.cmd.colorscheme("PaperColor")
-    ColorMyPencils("PaperColor")
+    vim.cmd.colorscheme(lightct)
+    ColorMyPencils(lightct)
   else
     set_background_dark()
-    vim.cmd.colorscheme("gruvbox")
-    ColorMyPencils("gruvbox")
+    vim.cmd.colorscheme(darkct)
+    ColorMyPencils(darkct)
   end
 end
 
@@ -70,3 +77,4 @@ end
 
 vim.keymap.set("n", "<leader>s", ":lua toggle_colorscheme()<CR>");
 vim.keymap.set("n", "<leader>l", ":lua toggle_light()<CR>");
+vim.keymap.set("n", "<leader>d", ":lua disable_background()<CR>");
