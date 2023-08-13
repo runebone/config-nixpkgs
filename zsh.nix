@@ -9,6 +9,7 @@
     };
 
     initExtra = ''
+      # export ZSH_CUSTOM=/nix/var/nix/gcroots/per-user-human/current-home/home-path/share/zsh
       export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/nix/var/nix/profiles/per-user/human/profile/lib
       export PATH=$PATH:/nix/var/nix/profiles/per-user/human/profile/include
 
@@ -130,11 +131,11 @@
         }
     ];
 
-    # oh-my-zsh = {
-    #   enable = true;
-
-    #   plugins = [ "git" "man" "ag" "vi-mode" ];
-    #   theme = "half-life"; # Gordon Freeman saved my life
-    # };
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" "man" "ag" "vi-mode" ];
+      theme = "half-life"; # Gordon Freeman saved my life
+      # theme = "lambda-mod"; # Gordon Freeman saved my life
+    };
   };
 }
