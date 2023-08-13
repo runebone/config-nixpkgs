@@ -45,6 +45,7 @@ in
   };
 
   home.packages = with pkgs; [
+    # lambda-mod-zsh-theme
     activate-linux
     # subversion # svn version control
     # rnote # ~= xournalpp
