@@ -23,7 +23,7 @@ let EXTRA_CONFIG = ''
   programs.neovim = {
     enable = true;
 
-    vimAlias = false;
+    vimAlias = true;
 
     plugins = with pkgs.vimPlugins; [
       # Basic quality of life improvements
@@ -46,6 +46,7 @@ let EXTRA_CONFIG = ''
       tokyonight-nvim
       gruvbox-nvim
       kanagawa-nvim
+      gruvbox-material
 
       # Other plugins
       vim-nix
