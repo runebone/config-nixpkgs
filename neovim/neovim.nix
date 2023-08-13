@@ -39,10 +39,13 @@ let EXTRA_CONFIG = ''
       vim-css-color
 
       # Colorschemes
-      awesome-vim-colorschemes
+      # awesome-vim-colorschemes
       srcery-vim
       papercolor-theme
       rose-pine
+      tokyonight-nvim
+      gruvbox-nvim
+      kanagawa-nvim
 
       # Other plugins
       vim-nix
