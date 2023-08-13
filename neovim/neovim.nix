@@ -31,7 +31,7 @@ let EXTRA_CONFIG = ''
       vim-commentary
       vim-repeat
       indentLine
-      todo-comments-nvim
+      # todo-comments-nvim
       trouble-nvim
 
       vim-airline
