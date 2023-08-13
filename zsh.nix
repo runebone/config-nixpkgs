@@ -70,6 +70,7 @@
       cdn = "cd ~/.config/nixpkgs/neovim && l";
       cf = "cd ~/.config && l";
       cfcf = "cd ~/.config/nixpkgs && l";
+      cfnp = "cd ~/.config/nixpkgs && l";
       cfa = "vim ~/.config/alacritty/alacritty.yml";
       cfh = "vim ~/.config/nixpkgs/home.nix";
       cfn = "vim ~/.config/nixpkgs/neovim/neovim.nix";
@@ -117,6 +118,7 @@
       sbg = "xwallpaper --zoom";
       wp = "cd ~/Pictures/Wallpapers && l";
       ssh = "TERM=xterm-256color ssh";
+      qrd = "devour qrenderdoc";
     };
 
     plugins = [
