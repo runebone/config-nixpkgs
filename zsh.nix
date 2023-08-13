@@ -85,6 +85,7 @@
       mm = "pactl set-source-mute @DEFAULT_SOURCE@ toggle"; # Mute mic
       mv = "mv -iv";
       nrs = "sudo nixos-rebuild switch";
+      ngc = "nix-store --gc";
       p = "cd ~/Pictures && l";
       rm = "rm -vI";
       sc = "cd ~/Pictures/Screenshots && l";
