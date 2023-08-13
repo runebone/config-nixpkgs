@@ -75,6 +75,7 @@
       cfa = "vim ~/.config/alacritty/alacritty.yml";
       cfh = "vim ~/.config/nixpkgs/home.nix";
       cfn = "vim ~/.config/nixpkgs/neovim/neovim.nix";
+      cfm = "vim ~/.config/nixpkgs/neovim/main.lua";
       cfp = "vim ~/.config/nixpkgs/polybar.nix";
       cfs = "sudo vim /etc/nixos/configuration.nix";
       cfz = "vim ~/.config/nixpkgs/zsh.nix";
