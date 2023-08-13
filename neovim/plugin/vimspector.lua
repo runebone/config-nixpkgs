@@ -1,0 +1,5 @@
+-- let g:vimspector_install_gadgets = [
+    -- 'CodeLLDB',
+    -- 'vscode-cpptools',
+    -- 'debugpy'
+-- ]
