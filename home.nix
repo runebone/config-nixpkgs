@@ -97,10 +97,17 @@ in
     firefox
     fzf
     gcc
+
+    # Debuggers
     gdb # GNU debugger
-    ddd
+    ddd # GDB frontend
     # lldb # LLVM debugger
     renderdoc # Graphics debugger
+    apitrace # Another graphics debugger
+    kdbg # Didn't like it
+    cgdb # Pretty nice
+    # gdbgui # Doesn't work, WERKZEUG server error
+
     gimp
     git
     gnumake
