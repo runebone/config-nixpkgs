@@ -45,6 +45,7 @@ in
   };
 
   home.packages = with pkgs; [
+    colorpicker
     # lambda-mod-zsh-theme
     activate-linux
     # subversion # svn version control
