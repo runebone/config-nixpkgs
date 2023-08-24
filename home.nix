@@ -108,6 +108,16 @@ in
     cgdb # Pretty nice
     # gdbgui # Doesn't work, WERKZEUG server error
 
+    # Profiling stuff
+    gprof2dot
+    graphviz
+    linuxKernel.packages.linux_5_15.perf
+    valgrind
+    hotspot
+    heaptrack
+    gperftools
+    libsForQt5.kcachegrind
+
     gimp
     git
     gnumake
