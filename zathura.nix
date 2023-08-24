@@ -20,6 +20,8 @@
       map i recolor
       map p print
       map g goto top
+      set sandbox none
     '';
+    # set sandbox none to enable links following
   };
 }
