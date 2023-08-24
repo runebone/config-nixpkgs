@@ -163,6 +163,7 @@ in
     xorg.xev # Check keys' names
     xorg.xmodmap
     xorg.libxcb
+    xorg.xfontsel
     # xorg.libXinerama
     xwallpaper # Set wallpapers
     zathura # GOAT PDF viewer
