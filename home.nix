@@ -45,86 +45,29 @@ in
   };
 
   home.packages = with pkgs; [
-    colorpicker
+    # dosbox
+    # helix
     # lambda-mod-zsh-theme
-    activate-linux
-    # subversion # svn version control
     # rnote # ~= xournalpp
-    SDL2
-    SDL2_ttf
-    SDL2_net
-    SDL2_gfx
-    SDL2_sound
-    SDL2_mixer
-    SDL2_image
-    # assimp # Open Asset Import Library (for OpenGL)
-    zip
-    nodejs
-    nodePackages.svelte-language-server
-    nodePackages.typescript
-    nodePackages.typescript-language-server
-    poppler_utils # pdfunite
-    nlohmann_json
-    boost # boost/asio c++ lib
-    qemu
-    slock
+    # subversion # svn version control
     # vimb
     # vimgolf
-    parallel # Parallelize shell commands execution
-    edb # ~ IDA Pro; x64dbg
-    gtk3
-    brave
-    tmux
-    streamlit
-    docker
-    docker-compose
-    nasm
-    imagemagick
-    astyle
-    glfw
-    glm
-    pkg-config
-    (python3.withPackages my-python-packages)
+    activate-linux
     alacritty
     anki
     blender
+    brave
     brightnessctl
-    clang-tools # C/C++ language server
-    clisp
-    cmake
+    colorpicker
     devour # Window swallowing; hides your current window when launching an external program
-    dosbox
+    docker
+    docker-compose
     firefox
     fzf
-    gcc
-
-    # Debuggers
-    gdb # GNU debugger
-    cgdb # Pretty nice
-    renderdoc # Graphics debugger
-    apitrace # Another graphics debugger
-
-    # Profiling stuff
-    gprof2dot
-    graphviz
-    linuxKernel.packages.linux_5_15.perf
-    valgrind
-    hotspot
-    heaptrack
-    gperftools
-    libsForQt5.kcachegrind
-
     gimp
-    git
-    gnumake
-    go
-    gopls # Go language server
-    helix
     htop
-    julia
     killall
     lf # CLI file manager
-    libGL # OpenGL stuff
     libreoffice-qt # Open docx
     maim # "make image"; for screenshots
     mpv # Open video-files
@@ -132,38 +75,105 @@ in
     neovide # Neovim GUI
     nmap
     obs-studio
-    ocrmypdf
     pamixer # PulseAudio mixer
-    pandoc
+    parallel # Parallelize shell commands execution
     picom # Ricing
+    pkg-config
     polybar
-    pyright # Python language server
+    qemu
     qt6.full
     qtcreator # Qt's vim is actually faster than VSCode's
     ripgrep # Blazingly fast recursive grep
-    rnix-lsp # Nix language server
-    rust-analyzer # Rust language server
-    rustup # Rust compiler + cargo + rustup
     screenkey # Show pressed keys on screen
     sxiv # View pictures
     tdesktop # Telegram
     texlive.combined.scheme-full # Latex
-    tmux
     translate-shell
     transmission
     unzip
-    # vulkan-loader # Rust GLs
-    xorg.libX11 # OpenGL stuff
-    xorg.libXi
-    xorg.libXrandr
     xorg.xev # Check keys' names
-    xorg.xmodmap
-    xorg.libxcb
     xorg.xfontsel
-    # xorg.libXinerama
+    xorg.xmodmap
     xwallpaper # Set wallpapers
     zathura # GOAT PDF viewer
+    zip
     zsh
+
+    # PDF stuff
+    imagemagick
+    ocrmypdf
+    pandoc
+    poppler_utils # pdfunite
+
+    # NodeJS stuff
+    nodePackages.svelte-language-server
+    nodePackages.typescript
+    nodePackages.typescript-language-server
+    nodejs
+
+    # Programming languages
+    (python3.withPackages my-python-packages)
+    clisp
+    go
+    julia
+    rustup # Rust compiler + cargo + rustup
+
+    # Language servers
+    clang-tools # C/C++ language server
+    gopls # Go language server
+    pyright # Python language server
+    rnix-lsp # Nix language server
+    rust-analyzer # Rust language server
+
+    # Misc for programming
+    astyle
+    cmake
+    gcc
+    git
+    gnumake
+    nasm
+    streamlit
+    tmux
+
+    # Libraries
+    # vulkan-loader # Rust GLs
+    boost # Boost/Asio C++ lib
+    glfw
+    glm
+    gtk3
+    libGL # OpenGL stuff
+    nlohmann_json # C++ json lib
+    xorg.libX11 # OpenGL stuff
+    xorg.libXi
+    xorg.libXinerama # Use 2 or more physical displays as one large display
+    xorg.libXrandr
+    xorg.libxcb
+
+    # Debuggers
+    gdb # GNU debugger
+    cgdb # Pretty nice
+    renderdoc # Graphics debugger
+    apitrace # Another graphics debugger
+    edb # ~ IDA Pro; x64dbg
+
+    # Profiling stuff
+    gperftools
+    gprof2dot
+    graphviz
+    heaptrack
+    hotspot
+    libsForQt5.kcachegrind
+    linuxKernel.packages.linux_5_15.perf
+    valgrind
+
+    # SDL2 stuff
+    SDL2
+    SDL2_gfx
+    SDL2_image
+    SDL2_mixer
+    SDL2_net
+    SDL2_sound
+    SDL2_ttf
   ];
 
   xsession = {
