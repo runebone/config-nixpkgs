@@ -100,13 +100,9 @@ in
 
     # Debuggers
     gdb # GNU debugger
-    ddd # GDB frontend
-    # lldb # LLVM debugger
+    cgdb # Pretty nice
     renderdoc # Graphics debugger
     apitrace # Another graphics debugger
-    kdbg # Didn't like it
-    cgdb # Pretty nice
-    # gdbgui # Doesn't work, WERKZEUG server error
 
     # Profiling stuff
     gprof2dot
