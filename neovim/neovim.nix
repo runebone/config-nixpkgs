@@ -15,7 +15,6 @@ let EXTRA_CONFIG = ''
   luafile ${PLUGIN_DIR}/refactoring.lua
   luafile ${PLUGIN_DIR}/telescope.lua
   luafile ${PLUGIN_DIR}/treesitter.lua
-  luafile ${PLUGIN_DIR}/vimspector.lua
   luafile ${PLUGIN_DIR}/zenmode.lua
 ''; in
 {
@@ -61,13 +60,6 @@ let EXTRA_CONFIG = ''
 
       # Blazingly fast navigation
       harpoon
-
-      # Debugger
-      vimspector
-      # nvim-dap
-      # nvim-dap-ui
-      # telescope-dap-nvim
-      # nvim-dap-virtual-text
 
       # NerdTree-like plugin
       nvim-tree-lua
