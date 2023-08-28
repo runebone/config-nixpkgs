@@ -233,8 +233,8 @@ in
       "super + Print" = "_PATH_=\"\$HOME/Pictures/Screenshots/pic-sel-\"\$(date '+%y%m%d-%H%M-%S').png\"\" && maim -s \"$_PATH_\" && xclip -selection clipboard -t image/png \"$_PATH_\"";
       "super + shift + s" = "systemctl suspend";
       "super + End" = "systemctl hibernate";
-      "super + bracketleft" = "bspc node -z left -135 0 || bspc node -z right -135 0";
-      "super + bracketright" = "bspc node -z left 135 0 || bspc node -z right 135 0";
+      "super + bracketleft" = "bspc node -z left -120 0 || bspc node -z right -120 0";
+      "super + bracketright" = "bspc node -z left 120 0 || bspc node -z right 120 0";
     };
   };
 
