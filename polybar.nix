@@ -5,8 +5,11 @@ with {
     background = "#282A2E";
     background-alt = "#373B41";
     foreground = "#C5C8C6";
-    primary = "#519ABA"; # "#2C78BF"; # "#4285F4"; # "#2C78BF";
-    secondary = "#0AAEB3"; # "#68A8E4";
+    # primary = "#2C78BF";
+    # primary = "#4285F4";
+    # primary = "#519ABA";
+    # secondary = "#68A8E4";
+    secondary = "#0AAEB3";
     alert = "#EF2F27";
     disabled = "#707880";
 
@@ -62,7 +65,8 @@ with {
 
         label-active = "%name%";
         label-active-background = "\${colors.background-alt}";
-        label-active-underline = "\${colors.primary}";
+        # label-active-underline = "\${colors.primary}";
+        label-active-underline = "\${colors.background-alt}";
         label-active-padding = "1";
 
         label-occupied = "%name%";
@@ -141,7 +145,7 @@ with {
         type = "custom/script";
         interval = "2";
         # tail = "true"; # eats so much
-        exec = "~/.config/nixpkgs/scripts/custompulse.sh";
+        exec = "~/.config/home-manager/scripts/custompulse.sh";
 
         format-prefix = "VOL ";
         format-prefix-foreground = "\${colors.disabled}";

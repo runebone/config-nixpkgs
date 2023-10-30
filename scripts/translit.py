@@ -50,5 +50,5 @@ for filename in sys.argv[1:]:
             translit.append(letter)
     translit = "".join(translit)
 
-    if translit != filename:
+    if translit != filename and translit != "Telegram_Desktop":
         subprocess.Popen(['mv', '-iv', f'{filename}', f'{translit}'])

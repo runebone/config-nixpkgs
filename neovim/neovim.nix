@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 
 with {
-  LUA_CONFIG = "$HOME/.config/nixpkgs/neovim/main.lua";
-  PLUGIN_DIR = "$HOME/.config/nixpkgs/neovim/plugin";
+  LUA_CONFIG = "$HOME/.config/home-manager/neovim/main.lua";
+  PLUGIN_DIR = "$HOME/.config/home-manager/neovim/plugin";
 };
 
 let EXTRA_CONFIG = ''
@@ -72,21 +72,33 @@ let EXTRA_CONFIG = ''
       {
         plugin = nvim-treesitter.withPlugins (
           plugins: with plugins; [
+            bash
+            bibtex
             c
+            c_sharp
             cmake
+            comment
+            commonlisp
             cpp
+            csv
+            dockerfile
             glsl
             go
+            java
             javascript
+            json
+            julia
             latex
             lua
             make
             nix
             python
             rust
+            svelte
+            toml
             typescript
             vim
-            comment
+            zig
           ]
         );
         type = "lua";
@@ -96,6 +108,7 @@ let EXTRA_CONFIG = ''
       # LSP
       nvim-lspconfig
       lsp-colors-nvim
+      # nvim-jdtls # Java...
 
       # Autocompletion
       nvim-cmp

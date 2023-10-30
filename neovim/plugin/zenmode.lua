@@ -15,6 +15,7 @@ vim.keymap.set("n", "<leader>zz", function()
     vim.wo.number = true
     vim.wo.rnu = true
     ColorMyPencils()
+    disable_background()
 end)
 
 vim.keymap.set("n", "<leader>zZ", function()
@@ -31,4 +32,5 @@ vim.keymap.set("n", "<leader>zZ", function()
     vim.wo.rnu = false
     vim.opt.colorcolumn = "0"
     ColorMyPencils()
+    disable_background()
 end)

@@ -19,11 +19,17 @@ let
     pandas
     pip
     pyqt6
-    poetry # Virtual environments, dependencies management
+    poetry-core # Virtual environments, dependencies management
     requests
     scipy
     sympy
+    psycopg2
+    faker
+    redis
   ];
+  unstableTarball = 
+  fetchTarball
+  https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
 in
 {
   imports = [
@@ -33,6 +39,14 @@ in
     ./zsh.nix
   ];
 
+  nixpkgs.config = {
+    packageOverrides = pkgs: with pkgs; {
+      unstable = import unstableTarball {
+        config = config.nixpkgs.config;
+      };
+    };
+  };
+
   home = {
     username = "human";
     homeDirectory = "/home/human";
@@ -41,15 +55,13 @@ in
       BROWSER = BROWSER;
       TERMINAL = TERM;
     };
-    stateVersion = "22.11";
+    stateVersion = "23.05";
   };
 
   home.packages = with pkgs; [
-    # dosbox
-    # helix
+    # tikzit
     # lambda-mod-zsh-theme
-    # rnote # ~= xournalpp
-    # subversion # svn version control
+    rnote # ~= xournalpp
     # vimb
     # vimgolf
     activate-linux
@@ -60,27 +72,36 @@ in
     brightnessctl
     colorpicker
     devour # Window swallowing; hides your current window when launching an external program
+    dia
     docker
     docker-compose
+    dosbox
+    dot2tex
+    file
     firefox
+    # librewolf-unwrapped
     fzf
     gimp
+    groff
     htop
     killall
+    kitty
     lf # CLI file manager
     libreoffice-qt # Open docx
+    # linuxKernel.packages.linux_zen.virtualboxGuestAdditions
     maim # "make image"; for screenshots
+    man-pages # Linux manual
     mpv # Open video-files
     neofetch # Of course
     neovide # Neovim GUI
     nmap
     obs-studio
+    openvpn
     pamixer # PulseAudio mixer
     parallel # Parallelize shell commands execution
     picom # Ricing
     pkg-config
     polybar
-    qemu
     qt6.full
     qtcreator # Qt's vim is actually faster than VSCode's
     ripgrep # Blazingly fast recursive grep
@@ -104,12 +125,31 @@ in
     ocrmypdf
     pandoc
     poppler_utils # pdfunite
+    xournalpp
 
-    # NodeJS stuff
+    # Web stuff
+    nodePackages.eslint
+    nodePackages.prettier
     nodePackages.svelte-language-server
     nodePackages.typescript
     nodePackages.typescript-language-server
     nodejs
+    bun
+    vite
+
+    # Android stuff
+    jdk # OpenJDK
+    # unstable.android-studio
+    # android-studio
+    # androidStudioPackages.dev
+    # androidStudioPackages.canary
+    unstable.androidStudioPackages.dev
+    gradle
+    qemu
+    libvirt # kvm
+    bridge-utils # kvm
+    kotlin
+    kotlin-language-server
 
     # Programming languages
     (python3.withPackages my-python-packages)
@@ -123,7 +163,8 @@ in
     gopls # Go language server
     pyright # Python language server
     rnix-lsp # Nix language server
-    rust-analyzer # Rust language server
+    # rust-analyzer # Rust language server
+    jdt-language-server # Java...
 
     # Misc for programming
     astyle
@@ -131,15 +172,20 @@ in
     gcc
     git
     gnumake
+    gnuplot
     nasm
+    ninja # Build system for cmake
     streamlit
     tmux
+    glxinfo # OpenGL info
 
     # Libraries
     # vulkan-loader # Rust GLs
     boost # Boost/Asio C++ lib
+    eigen # Linear algebra template lib
     glfw
     glm
+    gtest
     gtk3
     libGL # OpenGL stuff
     nlohmann_json # C++ json lib
@@ -149,12 +195,16 @@ in
     xorg.libXrandr
     xorg.libxcb
 
+    # Testing
+    bazel
+
     # Debuggers
     gdb # GNU debugger
     cgdb # Pretty nice
     renderdoc # Graphics debugger
     apitrace # Another graphics debugger
     edb # ~ IDA Pro; x64dbg
+    delve # Golang debugger
 
     # Profiling stuff
     gperftools
@@ -165,6 +215,8 @@ in
     libsForQt5.kcachegrind
     linuxKernel.packages.linux_5_15.perf
     valgrind
+    tracy
+    massif-visualizer
 
     # SDL2 stuff
     SDL2
@@ -182,9 +234,11 @@ in
     windowManager.bspwm = {
       enable = true;
 
-      monitors = {
-        eDP = [ "α" "β" "γ" "δ" "ε" "ζ" "η" "θ" ];
-      };
+      # monitors = [ 1 2 3 4 5 6 7 8 ]; # {
+        # eDP = [ "α" "β" "γ" "δ" "ε" "ζ" "η" "θ" ];
+        # eDP = [ "1" "2" "3" "4" "5" "6" "7" "8" ];
+        # eDP = [ "" "" "" "" "" "" "" "" ];
+      # };
 
       settings = {
         border_width = 0;
@@ -203,6 +257,10 @@ in
       startupPrograms = [
         "systemctl --user restart polybar"
       ];
+
+      extraConfig = ''
+      bspc monitor -d 1 2 3 4 5 6 7 8
+      '';
     };
 
     # Setup keyboard speed so that when holding a button for 0.3 sec, 50 chars
@@ -292,6 +350,13 @@ in
     map D delete
     '';
   };
+
+  nixpkgs.config.allowUnfreePredicate = pkg:
+  builtins.elem (lib.getName pkg) [
+    "android-studio-stable"
+    "android-studio-dev"
+    "android-studio-canary"
+  ];
 
   programs.home-manager.enable = true;
 }

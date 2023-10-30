@@ -9,7 +9,7 @@ local lsp_attach = function(client, bufnr)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
     vim.keymap.set('n', '<leader>k', vim.lsp.buf.signature_help, opts)
-    vim.keymap.set('i', '<C-l>', vim.lsp.buf.completion, opts)
+    -- vim.keymap.set('i', '<C-l>', vim.lsp.buf.completion, opts)
     vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
     vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, opts)
     vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, opts)
@@ -34,6 +34,13 @@ require('lspconfig').rnix.setup(config)
 require('lspconfig').julials.setup(config)
 require('lspconfig').svelte.setup(config)
 require('lspconfig').tsserver.setup(config)
+
+local java_config = {
+    on_attach = lsp_attach,
+    capabilities = lsp_capabilities,
+    cmd = { 'jdt-language-server' }
+}
+require('lspconfig').jdtls.setup(java_config)
 
 -- Lua
 require("lsp-colors").setup({
