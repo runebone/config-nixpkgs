@@ -59,6 +59,8 @@ in
   };
 
   home.packages = with pkgs; [
+    emacs
+    emacsPackages.doom
     # tikzit
     # lambda-mod-zsh-theme
     rnote # ~= xournalpp

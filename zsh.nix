@@ -132,6 +132,7 @@
       anki = "devour anki";
       xpp = "devour xournalpp";
       ast = "devour android-studio-dev";
+      enw = "emacs -nw";
     };
 
     plugins = [
