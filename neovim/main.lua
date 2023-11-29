@@ -28,6 +28,8 @@ vim.cmd [[
   inoremap [<CR> [<CR>]<C-o>O
   inoremap (<CR> (<CR>)<C-o>O
 
+  inoremap <C-c> <Esc>
+
   nnoremap j gj
   nnoremap k gk
 

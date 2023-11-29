@@ -59,7 +59,15 @@ in
   };
 
   home.packages = with pkgs; [
+    lshw
+    taskwarrior
     zoxide
+    ueberzugpp
+    yazi
+
+    ruff
+    yed
+    drawio
     rpcsvc-proto
     # postgresql
     emacs
@@ -288,7 +296,8 @@ in
       "super + m" = "pactl set-source-mute @DEFAULT_SOURCE@ toggle"; # Mute mic
       "super + r" = join [ TERM "-e htop" ];
       "super + shift + m" = "pamixer -t"; # Toggle mute audio
-      "super + shift + r" = join [ TERM "-e lf" ]; # r for ranger
+      # "super + shift + r" = join [ TERM "-e lf" ]; # r for ranger
+      "super + shift + r" = join [ TERM "-e yazi" ]; # r for ranger
       "super + shift + w" = join [ TERM "-e nmtui" ]; # Network Manager GUI
       "super + shift + {1-9}" = "bspc node -d '^{1-9}'";
       "super + shift + {Down,Up}" = "brightnessctl set {5-,+5}";
@@ -307,7 +316,7 @@ in
       "super + End" = "systemctl hibernate";
       "super + bracketleft" = "bspc node -z left -120 0 || bspc node -z right -120 0";
       "super + bracketright" = "bspc node -z left 120 0 || bspc node -z right 120 0";
-      "super + l" = "sh ~/.config/home-manager/scripts/switch_layout.sh";
+      "super + i" = "sh ~/.config/home-manager/scripts/switch_layout.sh";
     };
   };
 
@@ -365,6 +374,7 @@ in
     "android-studio-stable"
     "android-studio-dev"
     "android-studio-canary"
+    "yEd"
   ];
 
   programs.home-manager.enable = true;

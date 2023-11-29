@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let
-  currentDir = "~/.config/home-manager";
+  homeManagerDir = "~/.config/home-manager";
 in
 {
   programs.zsh = {
@@ -13,8 +13,8 @@ in
     };
 
     initExtra = ''
-      source ${currentDir}/zsh/lukesmith.zshrc
-      source ${currentDir}/zsh/zoxide.zshrc
+      source ${homeManagerDir}/zsh/lukesmith.zshrc
+      source ${homeManagerDir}/zsh/zoxide.zshrc
     '';
 
     shellAliases = {
@@ -22,18 +22,18 @@ in
       b = "cd ~/Books && l";
       c = "cd ~/Code && l";
       cb = "cd ~/Code/bmstu && l";
-      cdcd = "cd ~/.config/home-manager && l";
-      cdn = "cd ~/.config/home-manager/neovim && l";
+      cdcd = "cd ${homeManagerDir} && l";
+      cdn = "cd ${homeManagerDir}/neovim && l";
       cf = "cd ~/.config && l";
-      cfcf = "cd ~/.config/home-manager && l";
-      cfnp = "cd ~/.config/home-manager && l";
+      cfcf = "cd ${homeManagerDir} && l";
+      cfnp = "cd ${homeManagerDir} && l";
       cfa = "vim ~/.config/alacritty/alacritty.yml";
-      cfh = "vim ~/.config/home-manager/home.nix";
-      cfn = "vim ~/.config/home-manager/neovim/neovim.nix";
-      cfm = "vim ~/.config/home-manager/neovim/main.lua";
-      cfp = "vim ~/.config/home-manager/polybar.nix";
+      cfh = "vim ${homeManagerDir}/home.nix";
+      cfn = "vim ${homeManagerDir}/neovim/neovim.nix";
+      cfm = "vim ${homeManagerDir}/neovim/main.lua";
+      cfp = "vim ${homeManagerDir}/polybar.nix";
       cfs = "sudo vim /etc/nixos/configuration.nix";
-      cfz = "vim ~/.config/home-manager/zsh.nix";
+      cfz = "vim ${homeManagerDir}/zsh/zsh.nix";
       cp = "cp -iv";
       d = "cd ~/Documents && l";
       hm = "home-manager";
@@ -56,28 +56,20 @@ in
       obs = "devour obs"; # Swallow terminal
       gimp = "devour gimp"; # Swallow terminal
       brave = "devour brave"; # Swallow terminal
-      # asm = "cd ~/University/asm && l";
-      # ca = "cd ~/University/compalg && l";
+      drawio = "devour drawio";
       ae = "cd ~/University/s4/archcomp && l";
-      # cg = "cd ~/University/cg && l";
       oop = "cd ~/University/s4/oop && l";
-      # v = "devour neovide --nofork --multigrid";
       v = "cd ~/Videos && l";
-      # vim = "devour neovide --nofork --multigrid";
-      # psci = "cd ~/University/polsci && l";
-      # ssci = "cd ~/University/socsci && l";
-      # lta = "cd ~/University/lta && l";
-      # de = "cd ~/University/deutsche && l";
       aa = "cd ~/University/aa && l";
       db = "cd ~/University/db && l";
       os = "cd ~/University/os && l";
       pt = "cd ~/University/probtheory && l";
       nir = "cd ~/University/nir && l";
       cg = "cd ~/University/cg-cw-s4-bmstu && l";
-      translit = "python ~/.config/home-manager/scripts/translit.py";
+      translit = "python ${homeManagerDir}/scripts/translit.py";
       dn = "vim ~/Notes/$(date +'%Y-%m-%d').md";
       sdn = "shutdown now";
-      setrbg = "sh ~/.config/home-manager/scripts/set_random_background.sh";
+      setrbg = "sh ${homeManagerDir}/scripts/set_random_background.sh";
       sbg = "xwallpaper --zoom";
       wp = "cd ~/Pictures/Wallpapers && l";
       ssh = "TERM=xterm-256color ssh";
