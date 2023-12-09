@@ -301,6 +301,7 @@ in
       "super + End" = "systemctl hibernate";
       "super + bracketleft" = "bspc node -z left -120 0 || bspc node -z right -120 0";
       "super + bracketright" = "bspc node -z left 120 0 || bspc node -z right 120 0";
+      "super + l" = "sh ~/.config/home-manager/scripts/switch_layout.sh";
     };
   };
 
