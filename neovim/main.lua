@@ -27,6 +27,11 @@ vim.cmd [[
   inoremap {<CR> {<CR>}<C-o>O
   inoremap [<CR> [<CR>]<C-o>O
   inoremap (<CR> (<CR>)<C-o>O
+
+  nnoremap j gj
+  nnoremap k gk
+
+  au BufRead,BufNewFile *.jai set syntax=rust
 ]]
 
 vim.g.mapleader = ' '
@@ -86,3 +91,4 @@ vim.keymap.set("n", "<leader>s", ":lua toggle_colorscheme()<CR>");
 vim.keymap.set("n", "<leader>l", ":lua toggle_light()<CR>");
 vim.keymap.set("n", "<leader>d", ":lua disable_background()<CR>");
 vim.keymap.set("n", "<leader>g", ":lua set_gruvbox()<CR>");
+vim.keymap.set("i", "<C-c>", "<Esc>")

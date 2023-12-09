@@ -178,7 +178,7 @@ with {
         blacklist-0 = "num lock";
         blacklist-1 = "caps lock";
 
-        label-layout = "%layout%";
+        label-layout = "%layout%: %variant%";
         label-layout-foreground = "\${colors.background}";
         label-layout-background = "\${colors.foreground}";
         label-layout-padding = "2";

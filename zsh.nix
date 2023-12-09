@@ -107,7 +107,8 @@
       ae = "cd ~/University/s4/archcomp && l";
       # cg = "cd ~/University/cg && l";
       oop = "cd ~/University/s4/oop && l";
-      v = "devour neovide --nofork --multigrid";
+      # v = "devour neovide --nofork --multigrid";
+      v = "cd ~/Videos && l";
       # vim = "devour neovide --nofork --multigrid";
       # psci = "cd ~/University/polsci && l";
       # ssci = "cd ~/University/socsci && l";
@@ -133,6 +134,9 @@
       xpp = "devour xournalpp";
       ast = "devour android-studio-dev";
       enw = "emacs -nw";
+      t = "/var/run/current-system/sw/bin/time";
+      sl = "ls";
+      no = "ls";
     };
 
     plugins = [

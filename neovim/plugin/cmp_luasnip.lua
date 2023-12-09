@@ -108,4 +108,4 @@ cmp.setup({
 })
 
 require("luasnip.loaders.from_vscode").lazy_load()
-require("luasnip.loaders.from_snipmate").lazy_load({paths = "~/.config/nixpkgs/neovim/snippets"})
+require("luasnip.loaders.from_snipmate").lazy_load({paths = "~/.config/home-manager/neovim/snippets"})

@@ -11,8 +11,8 @@ with {
 # TODO: make this file cleaner
 let
   my-python-packages = ps: with ps; [
-    jupyter
-    ipython
+    # jupyter
+    # ipython
     beautifulsoup4
     matplotlib
     numpy
@@ -55,10 +55,12 @@ in
       BROWSER = BROWSER;
       TERMINAL = TERM;
     };
-    stateVersion = "23.05";
+    stateVersion = "23.11";
   };
 
   home.packages = with pkgs; [
+    rpcsvc-proto
+    # postgresql
     emacs
     emacsPackages.doom
     # tikzit
@@ -128,6 +130,7 @@ in
     pandoc
     poppler_utils # pdfunite
     xournalpp
+    inkscape
 
     # Web stuff
     nodePackages.eslint
@@ -180,6 +183,7 @@ in
     streamlit
     tmux
     glxinfo # OpenGL info
+    godot_4
 
     # Libraries
     # vulkan-loader # Rust GLs
@@ -190,6 +194,7 @@ in
     gtest
     gtk3
     libGL # OpenGL stuff
+    libpqxx # Postgres
     nlohmann_json # C++ json lib
     xorg.libX11 # OpenGL stuff
     xorg.libXi
@@ -261,7 +266,7 @@ in
       ];
 
       extraConfig = ''
-      bspc monitor -d 1 2 3 4 5 6 7 8
+      bspc monitor -d 1 2 3 4 5 6 7 8 \ 
       '';
     };
 
@@ -284,12 +289,12 @@ in
       "super + shift + m" = "pamixer -t"; # Toggle mute audio
       "super + shift + r" = join [ TERM "-e lf" ]; # r for ranger
       "super + shift + w" = join [ TERM "-e nmtui" ]; # Network Manager GUI
-      "super + shift + {1-8}" = "bspc node -d '^{1-8}'";
+      "super + shift + {1-9}" = "bspc node -d '^{1-9}'";
       "super + shift + {Down,Up}" = "brightnessctl set {5-,+5}";
       "super + shift + {h,j,k,l}" = "bspc node -s {west,south,north,east}";
       "super + e" = "firefox";
       "super + w" = BROWSER;
-      "super + {1-8}" = "bspc desktop -f '^{1-8}'";
+      "super + {1-9}" = "bspc desktop -f '^{1-9}'";
       "super + {f,t,+ shift + f}" = "bspc node -t {fullscreen,tiled,floating}";
       "super + {h,j,k,l}" = "bspc node -f {west,south,north,east}";
       "super + {minus,equal}" = "pamixer -{d,i} 5";
