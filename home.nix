@@ -36,7 +36,7 @@ in
     ./neovim/neovim.nix
     ./polybar.nix
     ./zathura.nix
-    ./zsh.nix
+    ./zsh/zsh.nix
   ];
 
   nixpkgs.config = {
@@ -59,6 +59,7 @@ in
   };
 
   home.packages = with pkgs; [
+    zoxide
     rpcsvc-proto
     # postgresql
     emacs

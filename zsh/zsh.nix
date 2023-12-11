@@ -1,4 +1,8 @@
 { config, pkgs, ... }:
+
+let
+  currentDir = "~/.config/home-manager";
+in
 {
   programs.zsh = {
     enable = true;
@@ -9,58 +13,8 @@
     };
 
     initExtra = ''
-      # export ZSH_CUSTOM=/nix/var/nix/gcroots/per-user-human/current-home/home-path/share/zsh
-      export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/nix/var/nix/profiles/per-user/human/profile/lib
-      export PATH=$PATH:/nix/var/nix/profiles/per-user/human/profile/include
-
-      # Luke Smith's .zshrc
-
-      autoload -U colors && colors
-
-      # Use vim keys in tab complete menu:
-      bindkey -M menuselect 'h' vi-backward-char
-      bindkey -M menuselect 'k' vi-up-line-or-history
-      bindkey -M menuselect 'l' vi-forward-char
-      bindkey -M menuselect 'j' vi-down-line-or-history
-      bindkey -v '^?' backward-delete-char
-
-      # Change cursor shape for different vi modes.
-      function zle-keymap-select () {
-          case $KEYMAP in
-              vicmd) echo -ne '\e[1 q';;      # block
-              viins|main) echo -ne '\e[5 q';; # beam
-          esac
-      }
-      zle -N zle-keymap-select
-      zle-line-init() {
-          zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-          echo -ne "\e[5 q"
-      }
-      zle -N zle-line-init
-      echo -ne '\e[5 q' # Use beam shape cursor on startup.
-      preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
-
-      # Use lf to switch directories and bind it to ctrl-o
-      lfcd () {
-          tmp="$(mktemp)"
-          lf -last-dir-path="$tmp" "$@"
-          if [ -f "$tmp" ]; then
-              dir="$(cat "$tmp")"
-              rm -f "$tmp" >/dev/null
-              [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
-          fi
-      }
-      bindkey -s '^o' 'lfcd\n'
-
-      bindkey -s '^a' 'bc -lq\n'
-
-      bindkey -s '^f' 'cd "$(dirname "$(fzf)")"\n'
-
-      bindkey '^[[P' delete-char
-
-      # Edit line in vim with ctrl-e:
-      autoload edit-command-line; zle -N edit-command-line
-      bindkey '^e' edit-command-line
+      source ${currentDir}/zsh/lukesmith.zshrc
+      source ${currentDir}/zsh/zoxide.zshrc
     '';
 
     shellAliases = {
@@ -95,7 +49,7 @@
       sxiv = "devour sxiv"; # Swallow terminal
       tg = "devour telegram-desktop";
       u = "cd ~/University && l";
-      z = "devour zathura"; # Swallow terminal
+      s = "devour zathura"; # Swallow terminal
       zathura = "devour zathura"; # Swallow terminal
       qtcreator = "devour qtcreator"; # Swallow terminal
       blender = "devour blender"; # Swallow terminal
@@ -137,6 +91,7 @@
       t = "/var/run/current-system/sw/bin/time";
       sl = "ls";
       no = "ls";
+      rdms = "systemctl restart display-manager.service";
     };
 
     plugins = [
