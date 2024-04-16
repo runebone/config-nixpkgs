@@ -4,28 +4,29 @@ with {
   join = list: lib.concatStringsSep " " list;
 
   EDITOR = "vim";
-  BROWSER = "brave";
+  BROWSER = "firefox";
   TERM = "alacritty";
 };
 
 # TODO: make this file cleaner
 let
   my-python-packages = ps: with ps; [
-    # jupyter
-    # ipython
+    jupyter
+    ipython
     beautifulsoup4
     matplotlib
     numpy
     pandas
     pip
     pyqt6
-    poetry-core # Virtual environments, dependencies management
     requests
     scipy
     sympy
     psycopg2
     faker
     redis
+    pypdf2
+    graphviz
   ];
   unstableTarball = 
   fetchTarball
@@ -59,6 +60,27 @@ in
   };
 
   home.packages = with pkgs; [
+    linuxKernel.packages.linux_6_6.vm-tools
+
+    nyxt
+    redshift
+
+    rlwrap # sbcl arrows
+    unrar-wrapper
+    # firehol
+    # firewalld
+    youtube-dl
+    # proxychains
+    lsof
+    pv # copy progress
+    smartmontools
+    usbutils
+    testdisk
+
+    termdown
+    ncdu
+    ruby
+
     lshw
     taskwarrior
     zoxide
@@ -68,7 +90,12 @@ in
     ruff
     yed
     drawio
+
+    rpcbind
+    libnsl
+    libtirpc
     rpcsvc-proto
+
     # postgresql
     emacs
     emacsPackages.doom
@@ -81,7 +108,7 @@ in
     alacritty
     anki
     blender
-    brave
+    # unstable.brave
     brightnessctl
     colorpicker
     devour # Window swallowing; hides your current window when launching an external program
@@ -92,6 +119,7 @@ in
     dot2tex
     file
     firefox
+    chromium
     # librewolf-unwrapped
     fzf
     gimp
@@ -140,8 +168,10 @@ in
     poppler_utils # pdfunite
     xournalpp
     inkscape
+    libwebp # dwebp image.webp -o image.png
 
     # Web stuff
+    nodePackages.bash-language-server
     nodePackages.eslint
     nodePackages.prettier
     nodePackages.svelte-language-server
@@ -154,7 +184,7 @@ in
     # Android stuff
     jdk # OpenJDK
     # unstable.android-studio
-    # android-studio
+    android-studio
     # androidStudioPackages.dev
     # androidStudioPackages.canary
     unstable.androidStudioPackages.dev
@@ -168,9 +198,20 @@ in
     # Programming languages
     (python3.withPackages my-python-packages)
     clisp
+    sbcl # lisp compiler
+    lispPackages.quicklisp
+    roswell # lisp implementation installer/manager
+    gprolog
+    yap
+    swiPrologWithGui
+    ciao
     go
     julia
-    rustup # Rust compiler + cargo + rustup
+    # rustup # Rust compiler + cargo + rustup
+    rustc
+    cargo
+    # ihaskell
+    ghc # Haskell compiler
 
     # Language servers
     clang-tools # C/C++ language server
@@ -179,23 +220,27 @@ in
     rnix-lsp # Nix language server
     # rust-analyzer # Rust language server
     jdt-language-server # Java...
+    lua-language-server
 
     # Misc for programming
     astyle
     cmake
     gcc
     git
+    git-lfs
     gnumake
     gnuplot
     nasm
     ninja # Build system for cmake
     streamlit
+    poetry # Python virtual environments, dependencies management
     tmux
     glxinfo # OpenGL info
     godot_4
 
     # Libraries
     # vulkan-loader # Rust GLs
+    # openssl
     boost # Boost/Asio C++ lib
     eigen # Linear algebra template lib
     glfw
@@ -282,7 +327,7 @@ in
     # Setup keyboard speed so that when holding a button for 0.3 sec, 50 chars
     # will be printed
     initExtra = ''
-      xset r rate 300 50
+      xset r rate 300 60
       xrandr --output eDP --set "TearFree" on
       xwallpaper --zoom ~/.background-image
     '';
@@ -302,7 +347,7 @@ in
       "super + shift + {1-9}" = "bspc node -d '^{1-9}'";
       "super + shift + {Down,Up}" = "brightnessctl set {5-,+5}";
       "super + shift + {h,j,k,l}" = "bspc node -s {west,south,north,east}";
-      "super + e" = "firefox";
+      "super + e" = "chromium";
       "super + w" = BROWSER;
       "super + {1-9}" = "bspc desktop -f '^{1-9}'";
       "super + {f,t,+ shift + f}" = "bspc node -t {fullscreen,tiled,floating}";
@@ -312,7 +357,10 @@ in
       "super + d" = "rofi -show drun";
       "Print" = "_PATH_=\"\$HOME/Pictures/Screenshots/pic-full-\"\$(date '+%y%m%d-%H%M-%S').png\"\" && maim \"$_PATH_\" && xclip -selection clipboard -t image/png \"$_PATH_\"";
       "super + Print" = "_PATH_=\"\$HOME/Pictures/Screenshots/pic-sel-\"\$(date '+%y%m%d-%H%M-%S').png\"\" && maim -s \"$_PATH_\" && xclip -selection clipboard -t image/png \"$_PATH_\"";
+      "super + p" = "_PATH_=\"\$HOME/Pictures/Screenshots/pic-full-\"\$(date '+%y%m%d-%H%M-%S').png\"\" && maim \"$_PATH_\" && xclip -selection clipboard -t image/png \"$_PATH_\"";
+      "super + shift + p" = "_PATH_=\"\$HOME/Pictures/Screenshots/pic-sel-\"\$(date '+%y%m%d-%H%M-%S').png\"\" && maim -s \"$_PATH_\" && xclip -selection clipboard -t image/png \"$_PATH_\""; # Focking PrtSc refuses to work
       "super + shift + s" = "systemctl suspend";
+      "super + s" = "sh ~/.config/home-manager/scripts/screenkey.sh";
       "super + End" = "systemctl hibernate";
       "super + bracketleft" = "bspc node -z left -120 0 || bspc node -z right -120 0";
       "super + bracketright" = "bspc node -z left 120 0 || bspc node -z right 120 0";
@@ -375,6 +423,7 @@ in
     "android-studio-dev"
     "android-studio-canary"
     "yEd"
+    "discord"
   ];
 
   programs.home-manager.enable = true;

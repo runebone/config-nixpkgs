@@ -22,6 +22,7 @@ in
       b = "cd ~/Books && l";
       c = "cd ~/Code && l";
       cb = "cd ~/Code/bmstu && l";
+      cba = "cd ~/Code/bmstu/aa && l";
       cdcd = "cd ${homeManagerDir} && l";
       cdn = "cd ${homeManagerDir}/neovim && l";
       cf = "cd ~/.config && l";
@@ -57,21 +58,29 @@ in
       gimp = "devour gimp"; # Swallow terminal
       brave = "devour brave"; # Swallow terminal
       drawio = "devour drawio";
-      ae = "cd ~/University/s4/archcomp && l";
-      oop = "cd ~/University/s4/oop && l";
       v = "cd ~/Videos && l";
-      aa = "cd ~/University/aa && l";
-      db = "cd ~/University/db && l";
+      pp = "cd ~/Papers && l";
+
+      oop = "cd ~/University/s4/oop && l";
+      cg = "cd ~/University/s5/cg-cw-s4-bmstu && l";
+      nir = "cd ~/University/s5/nir && l";
+      aa = "cd ~/University/s5/aa && l";
+      db = "cd ~/University/db-cw-s6-bmstu && l";
       os = "cd ~/University/os && l";
-      pt = "cd ~/University/probtheory && l";
-      nir = "cd ~/University/nir && l";
-      cg = "cd ~/University/cg-cw-s4-bmstu && l";
+      f = "cd ~/University/falp && l";
+      m = "cd ~/University/modeling && l";
+      ms = "cd ~/University/ms && l";
+      ppo = "cd ~/University/ppo && l";
+      sd = "cd ~/University/software-design && l";
+      de = "cd ~/University/deutsche && l";
+
       translit = "python ${homeManagerDir}/scripts/translit.py";
       dn = "vim ~/Notes/$(date +'%Y-%m-%d').md";
       sdn = "shutdown now";
       setrbg = "sh ${homeManagerDir}/scripts/set_random_background.sh";
       sbg = "xwallpaper --zoom";
       wp = "cd ~/Pictures/Wallpapers && l";
+      wpp = "cd ~/Pictures/wp230224 && l";
       ssh = "TERM=xterm-256color ssh";
       qrd = "devour qrenderdoc";
       lo = "devour libreoffice";
@@ -84,6 +93,8 @@ in
       sl = "ls";
       no = "ls";
       rdms = "systemctl restart display-manager.service";
+      sbcl = "rlwrap sbcl";
+      vb = "devour VirtualBox";
     };
 
     plugins = [

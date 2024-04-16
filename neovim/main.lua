@@ -34,6 +34,10 @@ vim.cmd [[
   nnoremap k gk
 
   au BufRead,BufNewFile *.jai set syntax=rust
+  au BufRead,BufNewFile *.tex setlocal spell spelllang=ru,en_us spellsuggest=fast
+
+  " Make gx work
+  nnoremap <silent> gx :execute 'silent! !xdg-open ' . shellescape(expand('<cWORD>'), 1)<CR>
 ]]
 
 vim.g.mapleader = ' '
@@ -93,4 +97,6 @@ vim.keymap.set("n", "<leader>s", ":lua toggle_colorscheme()<CR>");
 vim.keymap.set("n", "<leader>l", ":lua toggle_light()<CR>");
 vim.keymap.set("n", "<leader>d", ":lua disable_background()<CR>");
 vim.keymap.set("n", "<leader>g", ":lua set_gruvbox()<CR>");
-vim.keymap.set("i", "<C-c>", "<Esc>")
+vim.keymap.set("i", "<C-c>", "<Esc>");
+vim.keymap.set("n", "<C-Down>", "VDp==");
+vim.keymap.set("n", "<C-Up>", "VDkP==");

@@ -34,6 +34,8 @@ require('lspconfig').rnix.setup(config)
 require('lspconfig').julials.setup(config)
 require('lspconfig').svelte.setup(config)
 require('lspconfig').tsserver.setup(config)
+require('lspconfig').lua_ls.setup(config)
+require('lspconfig').bashls.setup(config)
 
 local java_config = {
     on_attach = lsp_attach,

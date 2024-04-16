@@ -12,9 +12,11 @@ let EXTRA_CONFIG = ''
   luafile ${PLUGIN_DIR}/harpoon.lua
   luafile ${PLUGIN_DIR}/lsp.lua
   luafile ${PLUGIN_DIR}/nvim-tree.lua
+  luafile ${PLUGIN_DIR}/oil.lua
   luafile ${PLUGIN_DIR}/refactoring.lua
   luafile ${PLUGIN_DIR}/telescope.lua
   luafile ${PLUGIN_DIR}/treesitter.lua
+  luafile ${PLUGIN_DIR}/undotree.lua
   luafile ${PLUGIN_DIR}/zenmode.lua
 ''; in
 {
@@ -53,7 +55,7 @@ let EXTRA_CONFIG = ''
       vim-glsl
       julia-vim
       vim-svelte
-      emmet-vim
+      # emmet-vim
 
       # Git
       vim-fugitive
@@ -64,6 +66,7 @@ let EXTRA_CONFIG = ''
       # NerdTree-like plugin
       nvim-tree-lua
       nvim-web-devicons
+      oil-nvim
 
       # Fuzzy finder
       telescope-nvim
@@ -127,6 +130,7 @@ let EXTRA_CONFIG = ''
       # Refactoring
       refactoring-nvim
 
+      undotree
       zen-mode-nvim
     ];
 
