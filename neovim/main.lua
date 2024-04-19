@@ -8,8 +8,6 @@ vim.cmd [[
   set shiftwidth=4
   set expandtab
 
-  set autochdir
-
   set t_Co=256
   set bg=dark
 
