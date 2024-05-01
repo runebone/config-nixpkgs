@@ -27,6 +27,7 @@ let
     redis
     pypdf2
     graphviz
+    prettytable
   ];
   unstableTarball = 
   fetchTarball
@@ -60,7 +61,13 @@ in
   };
 
   home.packages = with pkgs; [
+    tldr
+
+    burpsuite
+    discord
+    ghidra
     linuxKernel.packages.linux_6_6.vm-tools
+    ffmpeg
 
     nyxt
     redshift
@@ -143,8 +150,8 @@ in
     picom # Ricing
     pkg-config
     polybar
-    qt6.full
-    qtcreator # Qt's vim is actually faster than VSCode's
+    # qt6.full
+    # qtcreator # Qt's vim is actually faster than VSCode's
     ripgrep # Blazingly fast recursive grep
     screenkey # Show pressed keys on screen
     sxiv # View pictures
@@ -365,6 +372,7 @@ in
       "super + bracketleft" = "bspc node -z left -120 0 || bspc node -z right -120 0";
       "super + bracketright" = "bspc node -z left 120 0 || bspc node -z right 120 0";
       "super + i" = "sh ~/.config/home-manager/scripts/switch_layout.sh";
+      "super + g" = "sh ~/.config/home-manager/scripts/swl_greek.sh";
     };
   };
 
@@ -424,6 +432,7 @@ in
     "android-studio-canary"
     "yEd"
     "discord"
+    "burpsuite"
   ];
 
   programs.home-manager.enable = true;

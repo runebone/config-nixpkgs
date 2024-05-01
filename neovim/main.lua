@@ -13,7 +13,7 @@ vim.cmd [[
 
   colorscheme gruvbox-material
 
-  set guifont=Mononoki:h10
+  set guifont=Mononoki:h12
 
   set number relativenumber
   set cul
@@ -91,10 +91,12 @@ function set_gruvbox()
     ColorMyPencils(gruvbox)
 end
 
+vim.keymap.set("n", "<leader>y", ":so /home/human/.config/home-manager/neovim/colors/yin.vim<CR><CR>");
 vim.keymap.set("n", "<leader>s", ":lua toggle_colorscheme()<CR>");
 vim.keymap.set("n", "<leader>l", ":lua toggle_light()<CR>");
 vim.keymap.set("n", "<leader>d", ":lua disable_background()<CR>");
 vim.keymap.set("n", "<leader>g", ":lua set_gruvbox()<CR>");
 vim.keymap.set("i", "<C-c>", "<Esc>");
+vim.keymap.set("i", "<C-i>", "<Esc>");
 vim.keymap.set("n", "<C-Down>", "VDp==");
 vim.keymap.set("n", "<C-Up>", "VDkP==");

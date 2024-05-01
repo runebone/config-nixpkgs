@@ -16,6 +16,7 @@ let EXTRA_CONFIG = ''
   luafile ${PLUGIN_DIR}/refactoring.lua
   luafile ${PLUGIN_DIR}/telescope.lua
   luafile ${PLUGIN_DIR}/treesitter.lua
+  luafile ${PLUGIN_DIR}/trouble.lua
   luafile ${PLUGIN_DIR}/undotree.lua
   luafile ${PLUGIN_DIR}/zenmode.lua
 ''; in

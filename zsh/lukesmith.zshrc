@@ -45,6 +45,8 @@ bindkey -s '^a' 'bc -lq\n'
 
 bindkey -s '^f' 'cd "$(dirname "$(fzf)")"\n'
 
+bindkey -s '^s' 'devour zathura "$(fzf)"\n'
+
 bindkey '^[[P' delete-char
 
 # Edit line in vim with ctrl-e:

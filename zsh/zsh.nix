@@ -95,6 +95,8 @@ in
       rdms = "systemctl restart display-manager.service";
       sbcl = "rlwrap sbcl";
       vb = "devour VirtualBox";
+      nv = "devour neovide --multigrid --nofork";
+      jp = "julia --project";
     };
 
     plugins = [
